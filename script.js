@@ -41,18 +41,45 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 3. Topbar Scroll Glassmorphism
+  // 3. Topbar Scroll Glassmorphism & Top Scroll Progress Bar (from sakthiispeaks)
   // =========================================================================
   const header = document.getElementById('header');
+  const scrollProgressBar = document.getElementById('scroll-progress-bar');
+
   const onScroll = () => {
-    if (window.scrollY > 40) {
+    const scrollY = window.scrollY;
+    if (scrollY > 40) {
       header?.classList.add('scrolled');
     } else {
       header?.classList.remove('scrolled');
     }
+
+    if (scrollProgressBar) {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? Math.min(Math.max(scrollY / docHeight, 0), 1) : 0;
+      scrollProgressBar.style.transform = `scaleX(${progress})`;
+    }
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  // =========================================================================
+  // 3b. Interactive Radial Mouse Follower Glow (from sakthiispeaks)
+  // =========================================================================
+  const mouseGlow = document.getElementById('mouse-radial-glow');
+  if (mouseGlow && window.matchMedia('(pointer: fine)').matches) {
+    let ticking = false;
+    window.addEventListener('pointermove', (e) => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          mouseGlow.style.setProperty('--mouse-x', `${e.clientX}px`);
+          mouseGlow.style.setProperty('--mouse-y', `${e.clientY}px`);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
 
   // =========================================================================
   // 4. Smooth Editorial Scroll Reveals (Enhancement 4)

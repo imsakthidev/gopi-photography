@@ -95,6 +95,93 @@ ul {
 }
 
 /* ==========================================================================
+   Viewport Scroll Progress Bar (from sakthiispeaks)
+   ========================================================================== */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(90deg, var(--accent) 0%, #D4AF37 50%, #EADBC8 100%);
+  transform-origin: 0% 50%;
+  transform: scaleX(0);
+  z-index: 9999;
+  box-shadow: 0 0 14px rgba(168, 137, 93, 0.7);
+  pointer-events: none;
+  transition: transform 0.08s linear;
+}
+
+/* ==========================================================================
+   Background Ambient Floating Glow Orbs (from sakthiispeaks)
+   ========================================================================== */
+.ambient-glow-wrapper {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ambient-glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(85px);
+  opacity: 0.38;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.glow-top-right {
+  top: -12%;
+  right: -8%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(168, 137, 93, 0.26) 0%, rgba(168, 137, 93, 0) 70%);
+  animation: floatOrb1 16s ease-in-out infinite alternate;
+}
+
+.glow-bottom-left {
+  bottom: -15%;
+  left: -10%;
+  width: 55vw;
+  height: 55vw;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.16) 0%, rgba(212, 175, 55, 0) 70%);
+  animation: floatOrb2 20s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatOrb1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(50px, -40px) scale(1.12); }
+  100% { transform: translate(-30px, 35px) scale(0.95); }
+}
+
+@keyframes floatOrb2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-45px, 50px) scale(1.15); }
+  100% { transform: translate(35px, -30px) scale(0.92); }
+}
+
+/* ==========================================================================
+   Interactive Radial Mouse Follower Glow (from sakthiispeaks)
+   ========================================================================== */
+.mouse-radial-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(650px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(168, 137, 93, 0.12), transparent 70%);
+  mix-blend-mode: screen;
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .mouse-radial-glow {
+    display: none;
+  }
+}
+
+/* ==========================================================================
    Smooth Editorial Scroll Reveals (Enhancement 4)
    ========================================================================== */
 
@@ -108,6 +195,45 @@ ul {
 .reveal-on-scroll.is-revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Staggered Grid Card Entrance (from sakthiispeaks) */
+.reveal-on-scroll.is-revealed .stories-grid > *:nth-child(1),
+.reveal-on-scroll.is-revealed .services-grid > *:nth-child(1),
+.reveal-on-scroll.is-revealed .films-grid > *:nth-child(1),
+.reveal-on-scroll.is-revealed .packages-grid > *:nth-child(1),
+.reveal-on-scroll.is-revealed .testimonials-grid > *:nth-child(1),
+.reveal-on-scroll.is-revealed .journal-grid > *:nth-child(1) {
+  animation: cardFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+
+.reveal-on-scroll.is-revealed .stories-grid > *:nth-child(2),
+.reveal-on-scroll.is-revealed .services-grid > *:nth-child(2),
+.reveal-on-scroll.is-revealed .films-grid > *:nth-child(2),
+.reveal-on-scroll.is-revealed .packages-grid > *:nth-child(2),
+.reveal-on-scroll.is-revealed .testimonials-grid > *:nth-child(2),
+.reveal-on-scroll.is-revealed .journal-grid > *:nth-child(2) {
+  animation: cardFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+}
+
+.reveal-on-scroll.is-revealed .stories-grid > *:nth-child(3),
+.reveal-on-scroll.is-revealed .services-grid > *:nth-child(3),
+.reveal-on-scroll.is-revealed .films-grid > *:nth-child(3),
+.reveal-on-scroll.is-revealed .packages-grid > *:nth-child(3),
+.reveal-on-scroll.is-revealed .testimonials-grid > *:nth-child(3),
+.reveal-on-scroll.is-revealed .journal-grid > *:nth-child(3) {
+  animation: cardFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.31s both;
+}
+
+@keyframes cardFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ==========================================================================
@@ -178,7 +304,30 @@ h1, h2, h3, h4 {
 .section-title {
   font-size: clamp(2.5rem, 5vw, 4.2rem);
   color: var(--primary);
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Expanding Accent Line (from sakthiispeaks) */
+.section-title-line {
+  width: 64px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+  border-radius: 2px;
+  margin: 10px 0 18px;
+  transform-origin: 0% 50%;
+  transform: scaleX(0);
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+.text-center-header .section-title-line {
+  margin: 12px auto 20px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  transform-origin: 50% 50%;
+}
+
+.reveal-on-scroll.is-revealed .section-title-line,
+.is-revealed .section-title-line {
+  transform: scaleX(1);
 }
 
 .section-subtitle {
@@ -257,6 +406,24 @@ h1, h2, h3, h4 {
   border: 1px solid var(--primary);
   border-radius: 1px;
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  transition: left 0.75s var(--ease);
+  pointer-events: none;
+}
+
+.btn-primary:hover::before {
+  left: 120%;
 }
 
 .btn-primary:hover {
@@ -264,6 +431,7 @@ h1, h2, h3, h4 {
   border-color: var(--accent);
   color: var(--white);
   transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(168, 137, 93, 0.35);
 }
 
 .btn-secondary {
@@ -469,9 +637,9 @@ h1, h2, h3, h4 {
 }
 
 @keyframes pulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(57, 229, 140, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(57, 229, 140, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(57, 229, 140, 0); }
+  0% { transform: scale(0.95); box-shadow: 0 0 4px #39e58c; }
+  50% { transform: scale(1.15); box-shadow: 0 0 14px #39e58c, 0 0 6px #39e58c; }
+  100% { transform: scale(0.95); box-shadow: 0 0 4px #39e58c; }
 }
 
 .topbar-pill {
@@ -612,6 +780,37 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
   margin-bottom: 1.5rem;
   backdrop-filter: blur(8px);
+  animation: badgePop 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both, floatBadge 5s ease-in-out 1s infinite alternate;
+}
+
+@keyframes badgePop {
+  0% { opacity: 0; transform: scale(0.85); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Staggered Word Entrance (from sakthiispeaks) */
+.anim-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(26px);
+  animation: wordEntrance 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: var(--delay, 0.2s);
+}
+
+@keyframes wordEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-studio-tag {
@@ -796,8 +995,8 @@ h1, h2, h3, h4 {
 }
 
 .story-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 24px rgba(168, 137, 93, 0.18);
   border-color: var(--accent);
 }
 
@@ -1103,7 +1302,8 @@ h1, h2, h3, h4 {
 
 .service-card:hover {
   border-color: var(--accent);
-  transform: translateY(-4px);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 28px rgba(168, 137, 93, 0.22);
 }
 
 .service-header {
@@ -1424,8 +1624,9 @@ h1, h2, h3, h4 {
 }
 
 .film-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   border-color: var(--accent);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 28px rgba(168, 137, 93, 0.22);
 }
 
 .film-thumb {
@@ -1674,8 +1875,8 @@ h1, h2, h3, h4 {
 }
 
 .package-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 25px rgba(168, 137, 93, 0.16);
   border-color: var(--accent);
 }
 
@@ -1689,7 +1890,7 @@ h1, h2, h3, h4 {
 
 .package-card.featured-package:hover {
   transform: translateY(-14px);
-  box-shadow: 0 30px 70px rgba(23, 23, 23, 0.35);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45), 0 0 32px rgba(168, 137, 93, 0.25);
 }
 
 .popular-ribbon {
@@ -2017,9 +2218,9 @@ h1, h2, h3, h4 {
 }
 
 .article-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   border-color: var(--accent);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12), 0 0 24px rgba(168, 137, 93, 0.18);
 }
 
 .article-thumb {
