@@ -3426,6 +3426,54 @@ h1, h2, h3, h4 {
   transform: scale(1.15);
 }
 
+/* Footer SEO Knowledge & Local Coverage Matrix */
+.footer-seo-matrix {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 36px 0 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 40px;
+}
+
+.seo-matrix-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.seo-col-title {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.seo-matrix-col p {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.42);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .footer-seo-matrix {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-seo-matrix {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 24px 0 20px;
+    margin-top: 28px;
+  }
+}
+
 .footer-bottom {
   display: flex;
   align-items: center;

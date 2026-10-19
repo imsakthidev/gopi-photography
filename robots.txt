@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gopiphotography.vercel.app/sitemap.xml
+Sitemap: https://gopiphotography.com/sitemap.xml

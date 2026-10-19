@@ -1,45 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://gopiphotography.vercel.app/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    
+    <!-- Image Indexing for Google Images Search Console -->
+    <image:image>
+      <image:loc>https://gopiphotography.vercel.app/assets/logo.png</image:loc>
+      <image:title>Gopi Photography Official Studio Logo</image:title>
+      <image:caption>Gopi Photography - Candid Wedding Photographer and Cinematic Films in Theni and Tamil Nadu</image:caption>
+      <image:geo_location>Theni, Tamil Nadu, India</image:geo_location>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://gopiphotography.vercel.app/assets/couple-1.webp</image:loc>
+      <image:title>Candid Wedding Couple Portrait Theni</image:title>
+      <image:caption>Outdoor romantic couple portrait with natural skin tones and true color grading by Gopi Photography Theni</image:caption>
+      <image:geo_location>Theni, Tamil Nadu, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gopiphotography.vercel.app/assets/wedding-couple.webp</image:loc>
+      <image:title>South Indian Wedding Stage Couple Portrait</image:title>
+      <image:caption>Traditional Tamil wedding reception grand entrance and garland ceremony photography in Theni and Madurai</image:caption>
+      <image:geo_location>Theni, Tamil Nadu, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gopiphotography.vercel.app/assets/wedding-bride.webp</image:loc>
+      <image:title>South Indian Bridal Portrait Muhurtham Saree</image:title>
+      <image:caption>Graceful traditional bridal portrait with authentic melanin skin tones, gold jewelry, and silk saree luster</image:caption>
+      <image:geo_location>Theni, Tamil Nadu, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gopiphotography.vercel.app/assets/portrait.webp</image:loc>
+      <image:title>Natural Skin Tone Bridal Portrait Tamil Nadu</image:title>
+      <image:caption>Timeless bridal studio portrait demonstrating unedited natural skin tones versus artificial filter comparison</image:caption>
+      <image:geo_location>Theni, Tamil Nadu, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gopiphotography.vercel.app/assets/couple-2.webp</image:loc>
+      <image:title>Pre-Wedding Outdoor Photoshoot Coimbatore</image:title>
+      <image:caption>Scenic sunset couple pre-wedding photoshoot in greenery and hills by Gopi Photography</image:caption>
+      <image:geo_location>Coimbatore, Tamil Nadu, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gopiphotography.vercel.app/assets/wedding-family.webp</image:loc>
+      <image:title>Traditional Family Group Wedding Stage Photo</image:title>
+      <image:caption>Generations together family portrait at South Indian wedding reception in Tamil Nadu</image:caption>
+      <image:geo_location>Theni, Tamil Nadu, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gopiphotography.vercel.app/assets/candid.webp</image:loc>
+      <image:title>Candid Emotional Laughter Wedding Moment</image:title>
+      <image:caption>Authentic candid photojournalism capturing unscripted laughter and joy between wedding rituals</image:caption>
+      <image:geo_location>Madurai, Tamil Nadu, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gopiphotography.vercel.app/assets/baby-detail.webp</image:loc>
+      <image:title>Maternity and Baby Shower Photography</image:title>
+      <image:caption>Valaikappu and baby shower ceremony details photography in Theni</image:caption>
+      <image:geo_location>Theni, Tamil Nadu, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gopiphotography.vercel.app/assets/baby-mother.webp</image:loc>
+      <image:title>Mother and Newborn Baby Portrait</image:title>
+      <image:caption>Tender mother and child newborn milestone memories photography</image:caption>
+      <image:geo_location>Theni, Tamil Nadu, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gopiphotography.vercel.app/assets/baby-chair.webp</image:loc>
+      <image:title>First Birthday Milestone Photoshoot</image:title>
+      <image:caption>Cute smiling baby milestone photoshoot and birthday celebrations photography</image:caption>
+      <image:geo_location>Theni, Tamil Nadu, India</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://gopiphotography.vercel.app/assets/puberty-ritual.webp</image:loc>
+      <image:title>Traditional Manjal Neerattu Vizha Puberty Ceremony</image:title>
+      <image:caption>Cultural Tamil family function and sacred ritual photography in Theni and Dindigul</image:caption>
+      <image:geo_location>Theni, Tamil Nadu, India</image:geo_location>
+    </image:image>
+  </url>
+
   <url>
     <loc>https://gopiphotography.com/</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://gopiphotography.com/#work</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gopiphotography.com/#stories</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gopiphotography.com/#services</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://gopiphotography.com/#packages</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://gopiphotography.com/#about</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://gopiphotography.com/#enquire</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
   </url>
 </urlset>
