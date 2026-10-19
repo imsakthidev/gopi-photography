@@ -4352,6 +4352,23 @@ h1, h2, h3, h4 {
     padding-top: 0;
   }
 
+  .hero-status-tag {
+    white-space: normal;
+    text-align: center;
+    max-width: 92vw;
+    font-size: clamp(0.58rem, 2.7vw, 0.68rem);
+    letter-spacing: 0.05em;
+    padding: 6px 14px;
+    line-height: 1.35;
+    gap: 7px;
+    margin-bottom: 1.3rem;
+    box-sizing: border-box;
+  }
+
+  .hero-status-tag .pulse-dot {
+    flex-shrink: 0;
+  }
+
   .hero-title {
     font-size: clamp(2.3rem, 8.5vw, 3.2rem);
     line-height: 1.05;
@@ -4468,14 +4485,58 @@ h1, h2, h3, h4 {
     max-height: 520px;
   }
 
+  /* True Responsive Side-by-Side Dual View on Mobile */
   .grading-dual-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .dual-card {
+    border-radius: 10px;
+    overflow: hidden;
   }
 
   .dual-photo-frame {
-    aspect-ratio: 4 / 5;
-    max-height: 380px;
+    aspect-ratio: 3 / 4;
+    max-height: none;
+    border-radius: 9px 9px 0 0;
+    overflow: hidden;
+  }
+
+  .dual-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .dual-badge {
+    top: 6px;
+    left: 6px;
+    padding: 3px 6px;
+    font-size: 0.54rem;
+    letter-spacing: 0.04em;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .dual-caption {
+    padding: 8px 6px 10px;
+    text-align: left;
+  }
+
+  .dual-caption h5 {
+    font-size: 0.74rem;
+    margin-bottom: 2px;
+    line-height: 1.25;
+  }
+
+  .dual-caption p {
+    font-size: 0.65rem;
+    line-height: 1.35;
   }
 
   .grade-overlay-badge {
@@ -4594,13 +4655,41 @@ h1, h2, h3, h4 {
   }
 
   .chapter-header h2 {
-    font-size: 2.4rem;
+    font-size: clamp(1.8rem, 6.5vw, 2.4rem);
+    line-height: 1.15;
   }
 
   .chapter-photo-dual,
   .chapter-photo-triple {
     grid-template-columns: 1fr;
     gap: 14px;
+  }
+
+  .chapter-photo-full img,
+  .chapter-photo-dual img,
+  .chapter-photo-triple img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 10px;
+  }
+
+  .chapter-next-wrap {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 14px;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .chapter-next-wrap .next-story-btn {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 0.82rem;
+    white-space: normal !important;
+    letter-spacing: 0.08em;
   }
 
   .story-modal-close,
@@ -4617,8 +4706,59 @@ h1, h2, h3, h4 {
   .article-modal-box,
   .video-modal-box,
   .legal-modal-box {
-    padding: 40px 20px;
+    padding: 36px 16px 28px;
     max-height: 90dvh;
+    border-radius: 12px;
+    width: calc(100% - 24px);
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .video-placeholder-card h3 {
+    font-size: clamp(1.4rem, 5vw, 1.85rem);
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+
+  .video-placeholder-card p {
+    font-size: 0.82rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .video-play-sym {
+    width: 52px;
+    height: 52px;
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .video-actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .video-actions .btn-primary {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal !important;
+    text-align: center;
+    padding: 13px 14px !important;
+    font-size: 0.78rem !important;
+    letter-spacing: 0.05em !important;
+    line-height: 1.35 !important;
+    box-sizing: border-box;
+    border-radius: 8px;
+  }
+
+  /* Universal Mobile Button Safety */
+  .btn-primary,
+  .btn-secondary,
+  .btn-ember {
+    white-space: normal !important;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
   }
 
   .article-modal-body h2 {

@@ -353,7 +353,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // =========================================================================
   // 10. Featured Stories Chapter Engine (Phase 4 - Step 8 & 9)
+  // Statically imported asset URLs for 100% production & Vercel reliability
   // =========================================================================
+  const storyAssets = {
+    weddingCouple: new URL('./assets/wedding-couple.webp', import.meta.url).href,
+    couple1: new URL('./assets/couple-1.webp', import.meta.url).href,
+    weddingBride: new URL('./assets/wedding-bride.webp', import.meta.url).href,
+    portrait: new URL('./assets/portrait.webp', import.meta.url).href,
+    candid: new URL('./assets/candid.webp', import.meta.url).href,
+    weddingFamily: new URL('./assets/wedding-family.webp', import.meta.url).href,
+    couple2: new URL('./assets/couple-2.webp', import.meta.url).href,
+  };
+
   const storyData = {
     'arun-priya': {
       title: 'Arun × Priya',
@@ -361,12 +372,12 @@ document.addEventListener('DOMContentLoaded', () => {
       location: 'Theni, Tamil Nadu',
       date: 'December 2026',
       category: 'Traditional & Candid Wedding',
-      hero: 'assets/wedding-couple.webp',
-      dual: ['assets/couple-1.webp', 'assets/wedding-bride.webp'],
-      portrait: 'assets/portrait.webp',
-      triple: ['assets/wedding-bride.webp', 'assets/candid.webp', 'assets/wedding-couple.webp'],
-      family: 'assets/wedding-family.webp',
-      finalHero: 'assets/wedding-couple.webp',
+      hero: storyAssets.weddingCouple,
+      dual: [storyAssets.couple1, storyAssets.weddingBride],
+      portrait: storyAssets.portrait,
+      triple: [storyAssets.weddingBride, storyAssets.candid, storyAssets.weddingCouple],
+      family: storyAssets.weddingFamily,
+      finalHero: storyAssets.weddingCouple,
       nextSlug: 'vijay-harini',
       nextTitle: 'Vijay × Harini'
     },
@@ -376,12 +387,12 @@ document.addEventListener('DOMContentLoaded', () => {
       location: 'Madurai, Tamil Nadu',
       date: 'November 2026',
       category: 'Grand Reception Story',
-      hero: 'assets/wedding-bride.webp',
-      dual: ['assets/wedding-couple.webp', 'assets/wedding-family.webp'],
-      portrait: 'assets/portrait.webp',
-      triple: ['assets/candid.webp', 'assets/couple-1.webp', 'assets/wedding-bride.webp'],
-      family: 'assets/wedding-family.webp',
-      finalHero: 'assets/wedding-couple.webp',
+      hero: storyAssets.weddingBride,
+      dual: [storyAssets.weddingCouple, storyAssets.weddingFamily],
+      portrait: storyAssets.portrait,
+      triple: [storyAssets.candid, storyAssets.couple1, storyAssets.weddingBride],
+      family: storyAssets.weddingFamily,
+      finalHero: storyAssets.weddingCouple,
       nextSlug: 'karthik-divya',
       nextTitle: 'Karthik × Divya'
     },
@@ -391,12 +402,12 @@ document.addEventListener('DOMContentLoaded', () => {
       location: 'Coimbatore, Tamil Nadu',
       date: 'October 2026',
       category: 'Engagement & Pre-Wedding Session',
-      hero: 'assets/couple-2.webp',
-      dual: ['assets/couple-2.webp', 'assets/portrait.webp'],
-      portrait: 'assets/couple-2.webp',
-      triple: ['assets/candid.webp', 'assets/portrait.webp', 'assets/couple-2.webp'],
-      family: 'assets/couple-2.webp',
-      finalHero: 'assets/couple-2.webp',
+      hero: storyAssets.couple2,
+      dual: [storyAssets.couple2, storyAssets.portrait],
+      portrait: storyAssets.couple2,
+      triple: [storyAssets.candid, storyAssets.portrait, storyAssets.couple2],
+      family: storyAssets.couple2,
+      finalHero: storyAssets.couple2,
       nextSlug: 'arun-priya',
       nextTitle: 'Arun × Priya'
     }
@@ -425,25 +436,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
       <div class="chapter-gallery">
         <div class="chapter-photo-full">
-          <img src="${data.hero}" alt="${data.title} Hero Photograph" loading="eager">
+          <img src="${data.hero}" alt="${data.title} Hero Photograph" loading="eager" onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='assets/wedding-couple.webp';}">
         </div>
         <div class="chapter-photo-dual">
-          <img src="${data.dual[0]}" alt="${data.title} Moment 1" loading="lazy">
-          <img src="${data.dual[1]}" alt="${data.title} Moment 2" loading="lazy">
+          <img src="${data.dual[0]}" alt="${data.title} Moment 1" loading="lazy" onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='assets/couple-1.webp';}">
+          <img src="${data.dual[1]}" alt="${data.title} Moment 2" loading="lazy" onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='assets/wedding-bride.webp';}">
         </div>
         <div class="chapter-photo-full" style="max-width: 680px; margin: 10px auto;">
-          <img src="${data.portrait}" alt="${data.title} Portrait" loading="lazy">
+          <img src="${data.portrait}" alt="${data.title} Portrait" loading="lazy" onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='assets/portrait.webp';}">
         </div>
         <div class="chapter-photo-triple">
-          <img src="${data.triple[0]}" alt="${data.title} Detail 1" loading="lazy">
-          <img src="${data.triple[1]}" alt="${data.title} Detail 2" loading="lazy">
-          <img src="${data.triple[2]}" alt="${data.title} Detail 3" loading="lazy">
+          <img src="${data.triple[0]}" alt="${data.title} Detail 1" loading="lazy" onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='assets/candid.webp';}">
+          <img src="${data.triple[1]}" alt="${data.title} Detail 2" loading="lazy" onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='assets/couple-1.webp';}">
+          <img src="${data.triple[2]}" alt="${data.title} Detail 3" loading="lazy" onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='assets/wedding-couple.webp';}">
         </div>
         <div class="chapter-photo-full">
-          <img src="${data.family}" alt="${data.title} Family Portrait" loading="lazy">
+          <img src="${data.family}" alt="${data.title} Family Portrait" loading="lazy" onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='assets/wedding-family.webp';}">
         </div>
         <div class="chapter-photo-full">
-          <img src="${data.finalHero}" alt="${data.title} Final Image" loading="lazy">
+          <img src="${data.finalHero}" alt="${data.title} Final Image" loading="lazy" onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='assets/wedding-couple.webp';}">
         </div>
       </div>
 
@@ -579,7 +590,8 @@ document.addEventListener('DOMContentLoaded', () => {
     activeLightboxIndex = index;
 
     const item = galleryItems[activeLightboxIndex];
-    const src = item.getAttribute('data-src');
+    const itemImg = item.querySelector('img');
+    const src = itemImg?.currentSrc || itemImg?.src || item.getAttribute('data-src');
     const title = item.getAttribute('data-title') || '';
     const sub = item.getAttribute('data-sub') || '';
 
