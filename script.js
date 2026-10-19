@@ -94,8 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.04,
+      rootMargin: '60px 0px 60px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
@@ -103,110 +103,127 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => el.classList.add('is-revealed'));
   }
 
+  // Safety trigger for elements already in or near viewport
+  const revealVisibleNow = () => {
+    revealElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 80 && rect.bottom > -80) {
+        el.classList.add('is-revealed');
+      }
+    });
+  };
+  revealVisibleNow();
+  window.addEventListener('scroll', revealVisibleNow, { passive: true });
+  window.addEventListener('hashchange', () => setTimeout(revealVisibleNow, 60));
+
   // =========================================================================
   // 5. Hero Ambient Cross-Fade Slideshow (Enhancement 1)
   // =========================================================================
   const heroSlides = document.querySelectorAll('.hero-slide');
   const indicatorBars = document.querySelectorAll('.indicator-bar');
-  let currentHeroSlide = 0;
-  let heroTimer = null;
+  if (heroSlides.length > 1) {
+    let currentHeroSlide = 0;
+    let heroTimer = null;
 
-  const goToHeroSlide = (index) => {
-    if (index < 0) index = heroSlides.length - 1;
-    if (index >= heroSlides.length) index = 0;
-    currentHeroSlide = index;
+    const goToHeroSlide = (index) => {
+      if (index < 0) index = heroSlides.length - 1;
+      if (index >= heroSlides.length) index = 0;
+      currentHeroSlide = index;
 
-    heroSlides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === currentHeroSlide);
-    });
+      heroSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentHeroSlide);
+      });
 
-    indicatorBars.forEach((bar, i) => {
-      bar.classList.toggle('active', i === currentHeroSlide);
-    });
-  };
-
-  const startHeroSlideshow = () => {
-    if (heroSlides.length <= 1) return;
-    heroTimer = setInterval(() => {
-      goToHeroSlide(currentHeroSlide + 1);
-    }, 5500);
-  };
-
-  indicatorBars.forEach((bar, index) => {
-    bar.addEventListener('click', () => {
-      clearInterval(heroTimer);
-      goToHeroSlide(index);
-      startHeroSlideshow();
-    });
-  });
-
-  startHeroSlideshow();
-
-  // =========================================================================
-  // 6. Interactive Before/After Skin Tone Slider (Enhancement 2)
-  // =========================================================================
-  const sliderContainer = document.getElementById('comparison-slider');
-  const beforeLayer = document.getElementById('comp-before-layer');
-  const compHandle = document.getElementById('comp-handle');
-  let isDraggingSlider = false;
-
-  if (sliderContainer && beforeLayer && compHandle) {
-    const updateSliderPosition = (clientX) => {
-      const rect = sliderContainer.getBoundingClientRect();
-      const offsetX = clientX - rect.left;
-      let percentage = (offsetX / rect.width) * 100;
-      if (percentage < 0) percentage = 0;
-      if (percentage > 100) percentage = 100;
-
-      beforeLayer.style.width = `${percentage}%`;
-      compHandle.style.left = `${percentage}%`;
+      indicatorBars.forEach((bar, i) => {
+        bar.classList.toggle('active', i === currentHeroSlide);
+      });
     };
 
-    const onPointerMove = (e) => {
-      if (!isDraggingSlider) return;
-      const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-      updateSliderPosition(clientX);
+    const startHeroSlideshow = () => {
+      heroTimer = setInterval(() => {
+        goToHeroSlide(currentHeroSlide + 1);
+      }, 5500);
     };
 
-    const stopDragging = () => {
-      if (isDraggingSlider) {
-        isDraggingSlider = false;
-        sliderContainer.style.cursor = 'ew-resize';
-      }
-    };
-
-    sliderContainer.addEventListener('mousedown', (e) => {
-      isDraggingSlider = true;
-      sliderContainer.style.cursor = 'grabbing';
-      updateSliderPosition(e.clientX);
+    indicatorBars.forEach((bar, index) => {
+      bar.addEventListener('click', () => {
+        clearInterval(heroTimer);
+        goToHeroSlide(index);
+        startHeroSlideshow();
+      });
     });
 
-    sliderContainer.addEventListener('touchstart', (e) => {
-      isDraggingSlider = true;
-      if (e.touches && e.touches[0]) {
-        updateSliderPosition(e.touches[0].clientX);
-      }
-    }, { passive: true });
-
-    // Keyboard Accessibility for Slider
-    let sliderPercentage = 50;
-    compHandle.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') {
-        sliderPercentage = Math.max(0, sliderPercentage - 5);
-        beforeLayer.style.width = `${sliderPercentage}%`;
-        compHandle.style.left = `${sliderPercentage}%`;
-      } else if (e.key === 'ArrowRight') {
-        sliderPercentage = Math.min(100, sliderPercentage + 5);
-        beforeLayer.style.width = `${sliderPercentage}%`;
-        compHandle.style.left = `${sliderPercentage}%`;
-      }
-    });
-
-    window.addEventListener('mousemove', onPointerMove);
-    window.addEventListener('touchmove', onPointerMove, { passive: true });
-    window.addEventListener('mouseup', stopDragging);
-    window.addEventListener('touchend', stopDragging);
+    startHeroSlideshow();
   }
+
+  // =========================================================================
+  // 6. Dynamic Color Grading Studio Switcher (No Drag · Full Photo Visibility)
+  // =========================================================================
+  const gradingTabs = document.querySelectorAll('.grading-tab-btn');
+  const naturalView = document.getElementById('grade-natural-view');
+  const artificialView = document.getElementById('grade-artificial-view');
+  const dualView = document.getElementById('grade-dual-view');
+
+  if (gradingTabs.length > 0) {
+    const setGradingView = (grade) => {
+      gradingTabs.forEach(tab => {
+        const isActive = tab.getAttribute('data-grade') === grade;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', String(isActive));
+      });
+
+      if (naturalView) naturalView.hidden = (grade !== 'natural');
+      if (artificialView) artificialView.hidden = (grade !== 'artificial');
+      if (dualView) dualView.hidden = (grade !== 'dual');
+
+      trackEvent('color_grade_switch', { view: grade });
+    };
+
+    gradingTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const grade = tab.getAttribute('data-grade') || 'natural';
+        setGradingView(grade);
+      });
+    });
+  }
+
+  // =========================================================================
+  // Dynamic ScrollSpy Navigation Highlighter
+  // =========================================================================
+  const navTrackSections = document.querySelectorAll('section[id]');
+  const navLinksList = document.querySelectorAll('.nav-links a[href^="#"]');
+
+  const onScrollSpy = () => {
+    let currentId = 'home';
+    const offset = 180;
+
+    if (window.scrollY >= 200) {
+      navTrackSections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= offset && rect.bottom > offset) {
+          currentId = sec.getAttribute('id') || currentId;
+        }
+      });
+    }
+
+    // Map secondary sections to their closest parent nav anchor
+    if (currentId === 'hero' || currentId === 'intro') {
+      currentId = 'home';
+    } else if (currentId === 'testimonials' || currentId === 'process') {
+      currentId = 'about';
+    } else if (currentId === 'instagram') {
+      currentId = 'journal';
+    }
+
+    navLinksList.forEach(link => {
+      const href = link.getAttribute('href');
+      const match = href === `#${currentId}`;
+      link.classList.toggle('active', match);
+    });
+  };
+
+  window.addEventListener('scroll', onScrollSpy, { passive: true });
+  onScrollSpy();
 
   // =========================================================================
   // 7. Interactive Magnetic Custom Cursor (Enhancement 6)
@@ -347,9 +364,9 @@ document.addEventListener('DOMContentLoaded', () => {
       hero: 'assets/wedding-couple.webp',
       dual: ['assets/couple-1.webp', 'assets/wedding-bride.webp'],
       portrait: 'assets/portrait.webp',
-      triple: ['assets/puberty-ritual.webp', 'assets/candid.webp', 'assets/couple-2.webp'],
+      triple: ['assets/wedding-bride.webp', 'assets/candid.webp', 'assets/wedding-couple.webp'],
       family: 'assets/wedding-family.webp',
-      finalHero: 'assets/couple-1.webp',
+      finalHero: 'assets/wedding-couple.webp',
       nextSlug: 'vijay-harini',
       nextTitle: 'Vijay × Harini'
     },
@@ -362,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hero: 'assets/wedding-bride.webp',
       dual: ['assets/wedding-couple.webp', 'assets/wedding-family.webp'],
       portrait: 'assets/portrait.webp',
-      triple: ['assets/baby-detail.webp', 'assets/couple-1.webp', 'assets/candid.webp'],
+      triple: ['assets/candid.webp', 'assets/couple-1.webp', 'assets/wedding-bride.webp'],
       family: 'assets/wedding-family.webp',
       finalHero: 'assets/wedding-couple.webp',
       nextSlug: 'karthik-divya',
@@ -375,10 +392,10 @@ document.addEventListener('DOMContentLoaded', () => {
       date: 'October 2026',
       category: 'Engagement & Pre-Wedding Session',
       hero: 'assets/couple-2.webp',
-      dual: ['assets/couple-1.webp', 'assets/portrait.webp'],
+      dual: ['assets/couple-2.webp', 'assets/portrait.webp'],
       portrait: 'assets/couple-2.webp',
-      triple: ['assets/wedding-bride.webp', 'assets/candid.webp', 'assets/baby-chair.webp'],
-      family: 'assets/puberty-family.webp',
+      triple: ['assets/candid.webp', 'assets/portrait.webp', 'assets/couple-2.webp'],
+      family: 'assets/couple-2.webp',
       finalHero: 'assets/couple-2.webp',
       nextSlug: 'arun-priya',
       nextTitle: 'Arun × Priya'
@@ -643,24 +660,54 @@ document.addEventListener('DOMContentLoaded', () => {
   videoBackdrop?.addEventListener('click', closeVideoModal);
 
   // =========================================================================
-  // 14. Package Synchronization to Form
+  // 14. Dynamic Package Synchronization to Form
   // =========================================================================
   const packageSelect = document.getElementById('f-package');
+  const budgetSelect = document.getElementById('f-budget');
 
   document.querySelectorAll('[data-package]').forEach(btn => {
     btn.addEventListener('click', () => {
       const pkgValue = btn.getAttribute('data-package');
       if (packageSelect && pkgValue) {
         packageSelect.value = pkgValue;
+        packageSelect.classList.remove('field-invalid');
+
+        // Automatically match budget range
+        if (budgetSelect) {
+          if (pkgValue.includes('Essential')) {
+            budgetSelect.value = 'Under ₹20,000';
+          } else if (pkgValue.includes('Signature')) {
+            budgetSelect.value = '₹20,000 – ₹40,000';
+          } else if (pkgValue.includes('Cinematic')) {
+            budgetSelect.value = '₹20,000 – ₹40,000';
+          }
+          budgetSelect.classList.remove('field-invalid');
+        }
+
+        // Visual feedback pulse
+        packageSelect.classList.remove('field-highlight-pulse');
+        void packageSelect.offsetWidth; // re-flow
+        packageSelect.classList.add('field-highlight-pulse');
+
         trackEvent('view_packages', { selected: pkgValue });
       }
     });
   });
 
   // =========================================================================
-  // 15. WhatsApp Enquiry Submission (Phase 12 - Step 23 & Phase 13 - Step 24)
+  // 15. All 9 Columns Mandatory Validation & WhatsApp Submission
   // =========================================================================
   const bookingForm = document.getElementById('booking-form');
+
+  // Real-time clearance of invalid field styles on input/change
+  const formFieldIds = ['f-name', 'f-phone', 'f-event', 'f-date', 'f-location', 'f-coverage', 'f-package', 'f-budget', 'f-notes'];
+  formFieldIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('input', () => el.classList.remove('field-invalid'));
+      el.addEventListener('change', () => el.classList.remove('field-invalid'));
+    }
+  });
 
   if (bookingForm) {
     bookingForm.addEventListener('submit', (e) => {
@@ -677,30 +724,62 @@ document.addEventListener('DOMContentLoaded', () => {
       const budget = (formData.get('budget') || '').toString().trim();
       const notes = (formData.get('notes') || '').toString().trim();
 
-      if (!name || !phone || !eventType || !date || !location) {
-        alert('Please fill in your name, WhatsApp number, celebration type, date, and location.');
+      // Check all 9 mandatory fields
+      const mandatoryFields = [
+        { id: 'f-name', val: name, label: 'Your Name' },
+        { id: 'f-phone', val: phone, label: 'WhatsApp Number' },
+        { id: 'f-event', val: eventType, label: 'Event Type' },
+        { id: 'f-date', val: date, label: 'Event Date' },
+        { id: 'f-location', val: location, label: 'Location / Venue' },
+        { id: 'f-coverage', val: coverage, label: 'Desired Coverage' },
+        { id: 'f-package', val: selectedPkg, label: 'Selected Package' },
+        { id: 'f-budget', val: budget, label: 'Approximate Budget' },
+        { id: 'f-notes', val: notes, label: 'Event Details & Notes' }
+      ];
+
+      let firstInvalidEl = null;
+      let missingList = [];
+
+      mandatoryFields.forEach(f => {
+        const el = document.getElementById(f.id);
+        if (!f.val || f.val === '') {
+          el?.classList.add('field-invalid');
+          missingList.push(f.label);
+          if (!firstInvalidEl) firstInvalidEl = el;
+        } else {
+          el?.classList.remove('field-invalid');
+        }
+      });
+
+      if (firstInvalidEl) {
+        firstInvalidEl.focus();
+        firstInvalidEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        alert(`All 9 fields are mandatory to check date availability.\nPlease complete:\n• ${missingList.join('\n• ')}`);
         return;
       }
 
       trackEvent('form_submit', {
         event_type: eventType,
         location,
-        coverage
+        coverage,
+        package: selectedPkg
       });
 
       const messageLines = [
         'Hi Gopi Photography,',
-        "I'd like to check availability for my event.",
+        "I would like to check date availability for our upcoming celebration.",
         '',
-        `Name: ${name}`,
-        `WhatsApp: ${phone}`,
-        `Event: ${eventType}`,
-        `Date: ${date}`,
-        `Location: ${location}`,
-        `Coverage: ${coverage || 'Not specified'}`,
-        `Package: ${selectedPkg || 'Not specified'}`,
-        `Budget: ${budget || 'Not specified'}`,
-        `Additional details: ${notes || '—'}`
+        `👤 Name: ${name}`,
+        `📱 WhatsApp: ${phone}`,
+        `🎉 Event: ${eventType}`,
+        `📅 Date: ${date}`,
+        `📍 Location: ${location}`,
+        `📸 Coverage: ${coverage}`,
+        `📦 Package: ${selectedPkg}`,
+        `💰 Budget: ${budget}`,
+        `📝 Event Details & Notes: ${notes}`,
+        '',
+        'Please confirm availability and share your customized proposal.'
       ];
 
       const fullMessage = messageLines.join('\n');

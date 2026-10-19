@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://gopiphotography.com/">
 
   <!-- Favicon / Logo -->
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
 
   <!-- Open Graph / WhatsApp -->
@@ -143,7 +143,7 @@
        ========================================================================= -->
   <header class="topbar" id="header">
     <div class="topbar-container">
-      <a class="brand" href="#top" aria-label="GOPI PHOTOGRAPHY home">
+      <a class="brand" href="#home" aria-label="GOPI PHOTOGRAPHY home">
         <img src="assets/logo.png" alt="Gopi Photography Logo" class="brand-logo-img" width="44" height="44">
         <span class="brand-name">
           <strong>GOPI PHOTOGRAPHY</strong>
@@ -155,18 +155,31 @@
       <nav class="nav-links" id="nav-links" aria-label="Main Navigation">
         <a href="#work" data-track="nav_work">Work</a>
         <a href="#stories" data-track="nav_stories">Stories</a>
+        <a href="#films" data-track="nav_films">Films</a>
         <a href="#services" data-track="nav_services">Services</a>
         <a href="#approach" data-track="nav_approach">Skin Tones</a>
         <a href="#albums" data-track="nav_albums">Albums</a>
         <a href="#packages" data-track="nav_packages">Packages</a>
-        <a href="#films" data-track="nav_films">Films</a>
+        <a href="#about" data-track="nav_about">About</a>
         <a href="#journal" data-track="nav_journal">Journal</a>
         <a href="#faq" data-track="nav_faq">FAQ</a>
         <div class="mobile-nav-footer">
           <a href="#enquire" class="mobile-nav-cta">Check Your Date →</a>
           <div class="mobile-social-links">
-            <a href="https://instagram.com/gopi_photos_" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://wa.me/919500515932" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="https://instagram.com/gopi_photos_" target="_blank" rel="noopener" class="social-link-item" aria-label="Gopi Photography Instagram">
+              <svg class="instagram-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>Instagram</span>
+            </a>
+            <a href="https://wa.me/919500515932" target="_blank" rel="noopener" class="social-link-item" aria-label="Gopi Photography WhatsApp">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                <path d="M20.52 3.48A11.93 11.93 0 0012.06 0C5.46 0 .09 5.37.09 11.97c0 2.11.55 4.17 1.6 6L0 24l6.21-1.63a11.93 11.93 0 005.85 1.51h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-.12-6.22-3.52-8.43zM12.06 21.9a9.92 9.92 0 01-5.06-1.39l-.36-.21-3.76.99 1-3.66-.23-.38a9.9 9.9 0 01-1.52-5.28c0-5.48 4.46-9.94 9.94-9.94 2.65 0 5.14 1.03 7.02 2.91a9.88 9.88 0 012.91 7.03c0 5.48-4.46 9.93-9.94 9.93z"/>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
           </div>
         </div>
       </nav>
@@ -175,9 +188,8 @@
       <div class="topbar-actions">
         <div class="availability-pill topbar-pill" title="Wedding calendar status">
           <span class="pulse-dot"></span>
-          <span>2026–2027 Muhurtham Dates Open</span>
+          <span class="pill-text">2026–27 Muhurtham Dates Open</span>
         </div>
-        <a class="nav-cta-btn" href="#enquire" data-track="nav_check_date">Check Your Date</a>
         <button class="mobile-menu-btn" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="menu-bar"></span>
           <span class="menu-bar"></span>
@@ -187,27 +199,13 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="home">
 
     <!-- =========================================================================
-         01. HERO SECTION (Phase 4 + Enhancement 1 Cross-Fade Slideshow)
+         01. HERO SECTION (Editorial Luxury Dark Hero)
          ========================================================================= -->
     <section class="hero" id="hero">
-      <div class="hero-slideshow" id="hero-slideshow">
-        <!-- Slide 01: Couple Outdoors -->
-        <div class="hero-slide active" data-index="0">
-          <img src="assets/couple-1.webp" alt="Emotional South Indian wedding couple portrait" fetchpriority="high">
-        </div>
-        <!-- Slide 02: Reception Grand Stage -->
-        <div class="hero-slide" data-index="1">
-          <img src="assets/wedding-couple.webp" alt="Wedding couple at floral reception stage" loading="lazy">
-        </div>
-        <!-- Slide 03: Regal Bridal Portrait -->
-        <div class="hero-slide" data-index="2">
-          <img src="assets/wedding-bride.webp" alt="Regal bride portrait in purple reception gown" loading="lazy">
-        </div>
-        <div class="hero-overlay"></div>
-      </div>
+      <div class="hero-ambient-glow" aria-hidden="true"></div>
 
       <div class="hero-content reveal-on-scroll">
         <div class="hero-status-tag">
@@ -226,17 +224,31 @@
         <p class="hero-subtext">Candid photography • Cinematic films • Timeless portraits</p>
         
         <div class="hero-actions">
-          <a class="btn-primary" href="#enquire" data-track="hero_check_date">Check Your Date</a>
-          <a class="btn-secondary" href="#stories" data-track="hero_view_work">View Our Work <span class="arrow">↓</span></a>
+          <a class="btn-primary btn-ember" href="#enquire" data-track="hero_check_date">Check Your Date <span class="arrow">→</span></a>
+          <a class="btn-secondary" href="#work" data-track="hero_view_work">View Our Work <span class="arrow">↓</span></a>
         </div>
-      </div>
 
-      <!-- Slide Navigation Controls -->
-      <div class="hero-controls">
-        <div class="slide-indicators">
-          <button class="indicator-bar active" data-slide="0" aria-label="Slide 1: Couple Story"><span class="bar-fill"></span><small>01</small></button>
-          <button class="indicator-bar" data-slide="1" aria-label="Slide 2: Reception Story"><span class="bar-fill"></span><small>02</small></button>
-          <button class="indicator-bar" data-slide="2" aria-label="Slide 3: Bridal Chapter"><span class="bar-fill"></span><small>03</small></button>
+        <!-- Luxury Studio Credibility Badges -->
+        <div class="hero-trust-badges">
+          <div class="trust-badge-item">
+            <span class="trust-badge-num">100+</span>
+            <span class="trust-badge-lbl">Weddings Preserved</span>
+          </div>
+          <div class="trust-badge-divider"></div>
+          <div class="trust-badge-item">
+            <span class="trust-badge-num">4.9 ★</span>
+            <span class="trust-badge-lbl">108 Couple Reviews</span>
+          </div>
+          <div class="trust-badge-divider"></div>
+          <div class="trust-badge-item">
+            <span class="trust-badge-num">100%</span>
+            <span class="trust-badge-lbl">Natural Skin Tones</span>
+          </div>
+          <div class="trust-badge-divider"></div>
+          <div class="trust-badge-item">
+            <span class="trust-badge-num">4K</span>
+            <span class="trust-badge-lbl">Cinematic Films</span>
+          </div>
         </div>
       </div>
 
@@ -270,7 +282,7 @@
             <p class="statement-highlight">We preserve those moments naturally—with true skin tones, honest emotions, and photographs that still make you feel everything 20 years from now.</p>
             
             <div class="statement-link-wrap">
-              <a href="#stories" class="editorial-link" data-track="intro_explore_stories">Explore our stories <span class="arrow">→</span></a>
+              <a href="#work" class="editorial-link" data-track="intro_explore_work">Explore our work <span class="arrow">→</span></a>
             </div>
           </div>
         </div>
@@ -278,73 +290,7 @@
     </section>
 
     <!-- =========================================================================
-         03. FEATURED STORIES (Phase 4 - Step 8 & 9)
-         ========================================================================= -->
-    <section class="stories-section section-pad" id="stories">
-      <div class="container">
-        <div class="section-header-editorial reveal-on-scroll">
-          <div>
-            <span class="section-kicker">CURATED VISUAL ESSAYS</span>
-            <h2 class="section-title">Selected Stories</h2>
-            <div class="section-title-line"></div>
-          </div>
-          <p class="section-subtitle">Real celebrations documented from early morning rituals to the final farewells. Click any story to view the complete visual chapter.</p>
-        </div>
-
-        <div class="stories-grid">
-          <!-- Story 01 -->
-          <article class="story-card reveal-on-scroll" data-story="arun-priya">
-            <div class="story-image-wrap">
-              <img src="assets/wedding-couple.webp" alt="Arun and Priya Wedding Reception in Theni" loading="lazy">
-              <span class="story-tag">Wedding</span>
-            </div>
-            <div class="story-meta">
-              <span class="story-number">Story 01</span>
-              <h3 class="story-couple">Arun × Priya</h3>
-              <p class="story-location">Wedding · Theni, Tamil Nadu</p>
-              <button class="story-btn" type="button" aria-label="View Arun and Priya Wedding Story">
-                View Story <span class="arrow">→</span>
-              </button>
-            </div>
-          </article>
-
-          <!-- Story 02 -->
-          <article class="story-card reveal-on-scroll" data-story="vijay-harini">
-            <div class="story-image-wrap">
-              <img src="assets/wedding-bride.webp" alt="Vijay and Harini Reception in Madurai" loading="lazy">
-              <span class="story-tag">Reception</span>
-            </div>
-            <div class="story-meta">
-              <span class="story-number">Story 02</span>
-              <h3 class="story-couple">Vijay × Harini</h3>
-              <p class="story-location">Reception · Madurai, Tamil Nadu</p>
-              <button class="story-btn" type="button" aria-label="View Vijay and Harini Reception Story">
-                View Story <span class="arrow">→</span>
-              </button>
-            </div>
-          </article>
-
-          <!-- Story 03 -->
-          <article class="story-card reveal-on-scroll" data-story="karthik-divya">
-            <div class="story-image-wrap">
-              <img src="assets/couple-2.webp" alt="Karthik and Divya Engagement in Coimbatore" loading="lazy">
-              <span class="story-tag">Engagement</span>
-            </div>
-            <div class="story-meta">
-              <span class="story-number">Story 03</span>
-              <h3 class="story-couple">Karthik × Divya</h3>
-              <p class="story-location">Engagement · Coimbatore, Tamil Nadu</p>
-              <button class="story-btn" type="button" aria-label="View Karthik and Divya Engagement Story">
-                View Story <span class="arrow">→</span>
-              </button>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         04. WEDDING PORTFOLIO & CATEGORY FILTERS (Phase 5 - Step 10 & 11)
+         03. WEDDING PORTFOLIO & CATEGORY FILTERS (Phase 5 - Step 10 & 11)
          ========================================================================= -->
     <section class="portfolio-section section-pad" id="work">
       <div class="container">
@@ -501,6 +447,132 @@
     </section>
 
     <!-- =========================================================================
+         04. FEATURED STORIES (Phase 4 - Step 8 & 9)
+         ========================================================================= -->
+    <section class="stories-section section-pad" id="stories">
+      <div class="container">
+        <div class="section-header-editorial reveal-on-scroll">
+          <div>
+            <span class="section-kicker">CURATED VISUAL ESSAYS</span>
+            <h2 class="section-title">Selected Stories</h2>
+            <div class="section-title-line"></div>
+          </div>
+          <p class="section-subtitle">Real celebrations documented from early morning rituals to the final farewells. Click any story to view the complete visual chapter.</p>
+        </div>
+
+        <div class="stories-grid">
+          <!-- Story 01 -->
+          <article class="story-card reveal-on-scroll" data-story="arun-priya">
+            <div class="story-image-wrap">
+              <img src="assets/wedding-couple.webp" alt="Arun and Priya Wedding Reception in Theni" loading="lazy">
+              <span class="story-tag">Wedding</span>
+            </div>
+            <div class="story-meta">
+              <span class="story-number">Story 01</span>
+              <h3 class="story-couple">Arun × Priya</h3>
+              <p class="story-location">Wedding · Theni, Tamil Nadu</p>
+              <button class="story-btn" type="button" aria-label="View Arun and Priya Wedding Story">
+                View Story <span class="arrow">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Story 02 -->
+          <article class="story-card reveal-on-scroll" data-story="vijay-harini">
+            <div class="story-image-wrap">
+              <img src="assets/wedding-bride.webp" alt="Vijay and Harini Reception in Madurai" loading="lazy">
+              <span class="story-tag">Reception</span>
+            </div>
+            <div class="story-meta">
+              <span class="story-number">Story 02</span>
+              <h3 class="story-couple">Vijay × Harini</h3>
+              <p class="story-location">Reception · Madurai, Tamil Nadu</p>
+              <button class="story-btn" type="button" aria-label="View Vijay and Harini Reception Story">
+                View Story <span class="arrow">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Story 03 -->
+          <article class="story-card reveal-on-scroll" data-story="karthik-divya">
+            <div class="story-image-wrap">
+              <img src="assets/couple-2.webp" alt="Karthik and Divya Engagement in Coimbatore" loading="lazy">
+              <span class="story-tag">Engagement</span>
+            </div>
+            <div class="story-meta">
+              <span class="story-number">Story 03</span>
+              <h3 class="story-couple">Karthik × Divya</h3>
+              <p class="story-location">Engagement · Coimbatore, Tamil Nadu</p>
+              <button class="story-btn" type="button" aria-label="View Karthik and Divya Engagement Story">
+                View Story <span class="arrow">→</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         05. CINEMATIC FILMS (Phase 16 - Step 27)
+         ========================================================================= -->
+    <section class="films-section section-pad dark-section" id="films">
+      <div class="container">
+        <div class="section-header-editorial light-header reveal-on-scroll">
+          <div>
+            <span class="section-kicker">MOTION &amp; SOUND</span>
+            <h2 class="section-title">Watch the Stories</h2>
+            <div class="section-title-line"></div>
+          </div>
+          <p class="section-subtitle">A moving film brings back the laughter, speeches, and rhythm of your day in ways still frames cannot.</p>
+        </div>
+
+        <div class="films-grid">
+          <!-- Film 01 -->
+          <article class="film-card reveal-on-scroll" data-video-title="Arun & Priya — Cinematic Wedding Highlight" data-video-duration="2:14">
+            <div class="film-thumb">
+              <img src="assets/wedding-couple.webp" alt="Arun & Priya Wedding Film Thumbnail" loading="lazy">
+              <span class="duration-badge">2:14</span>
+              <button class="play-btn" type="button" aria-label="Play Arun & Priya Wedding Highlight">▶</button>
+            </div>
+            <div class="film-info">
+              <span class="film-number">01</span>
+              <h3>Wedding Highlight Film</h3>
+              <p>Arun &amp; Priya · Theni</p>
+            </div>
+          </article>
+
+          <!-- Film 02 -->
+          <article class="film-card reveal-on-scroll" data-video-title="Vijay & Harini — Reception Story" data-video-duration="1:42">
+            <div class="film-thumb">
+              <img src="assets/wedding-bride.webp" alt="Vijay & Harini Reception Film Thumbnail" loading="lazy">
+              <span class="duration-badge">1:42</span>
+              <button class="play-btn" type="button" aria-label="Play Vijay & Harini Reception Film">▶</button>
+            </div>
+            <div class="film-info">
+              <span class="film-number">02</span>
+              <h3>Reception Story</h3>
+              <p>Vijay &amp; Harini · Madurai</p>
+            </div>
+          </article>
+
+          <!-- Film 03 -->
+          <article class="film-card reveal-on-scroll" data-video-title="Karthik & Divya — Engagement Reel" data-video-duration="1:18">
+            <div class="film-thumb">
+              <img src="assets/couple-2.webp" alt="Karthik & Divya Engagement Story Thumbnail" loading="lazy">
+              <span class="duration-badge">1:18</span>
+              <button class="play-btn" type="button" aria-label="Play Karthik & Divya Engagement Story">▶</button>
+            </div>
+            <div class="film-info">
+              <span class="film-number">03</span>
+              <h3>Engagement Story</h3>
+              <p>Karthik &amp; Divya · Coimbatore</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
          05. SERVICES (Phase 6 - Step 12 to 14)
          ========================================================================= -->
     <section class="services-section section-pad dark-section" id="services">
@@ -649,30 +721,81 @@
             </div>
           </div>
 
-          <!-- Interactive Before/After Comparison Slider (Enhancement 2) -->
-          <div class="comparison-slider-container">
-            <div class="comparison-slider" id="comparison-slider" role="region" aria-label="Interactive color grading comparison">
-              <!-- After (Natural Gopi Grading) -->
-              <div class="comp-image comp-after">
-                <img src="assets/portrait.webp" alt="Gopi Photography Natural Skin Tone and Color" loading="lazy">
-                <span class="comp-badge badge-after">✦ Gopi's Natural Skin Tones</span>
+          <!-- Color Grading Studio (No Drag, 100% Full Photo Visibility for Mobile & Laptop) -->
+          <div class="color-grading-studio" id="color-grading-studio">
+            <!-- Studio Switcher Tabs -->
+            <div class="grading-studio-nav" role="tablist" aria-label="Skin tone color grading comparison">
+              <button class="grading-tab-btn active" data-grade="natural" role="tab" aria-selected="true" aria-controls="grade-natural-view">
+                <span class="tab-dot dot-natural"></span>
+                <span>✦ Natural Skin Tones</span>
+              </button>
+              <button class="grading-tab-btn" data-grade="artificial" role="tab" aria-selected="false" aria-controls="grade-artificial-view">
+                <span class="tab-dot dot-artificial"></span>
+                <span>✖ Harsh Artificial Filter</span>
+              </button>
+              <button class="grading-tab-btn" data-grade="dual" role="tab" aria-selected="false" aria-controls="grade-dual-view">
+                <span class="tab-dot dot-dual"></span>
+                <span>⊞ Side-by-Side Dual View</span>
+              </button>
+            </div>
+
+            <!-- View 1: Natural Skin Tones (Gopi's Grade) -->
+            <div class="grading-display-card grade-view-active" id="grade-natural-view" role="tabpanel">
+              <div class="grading-photo-frame">
+                <img src="assets/portrait.webp" alt="Gopi Photography Natural Skin Tone and True Color" loading="lazy" class="natural-grade-img">
+                <div class="grade-overlay-badge badge-natural">
+                  <span class="badge-icon">✦</span>
+                  <div>
+                    <strong>GOPI'S NATURAL SKIN TONES</strong>
+                    <small>True Melanin Preservation · Balanced Warmth · Authentic Gold &amp; Saree Luster</small>
+                  </div>
+                </div>
               </div>
-              <!-- Before (Simulated Over-Processed Filter) -->
-              <div class="comp-image comp-before" id="comp-before-layer">
-                <img src="assets/portrait.webp" alt="Simulated artificial orange filter look" loading="lazy">
-                <span class="comp-badge badge-before">✖ Harsh Artificial Filter</span>
+              <p class="grading-insight-note">
+                <strong>Why couples love this:</strong> Real skin texture is preserved with natural depth, zero plastic blurring, and true South Indian bridal skin tones that look timeless even 30 years from now.
+              </p>
+            </div>
+
+            <!-- View 2: Harsh Artificial Filter (Active on click) -->
+            <div class="grading-display-card" id="grade-artificial-view" role="tabpanel" hidden>
+              <div class="grading-photo-frame">
+                <img src="assets/portrait.webp" alt="Over-processed orange preset filter" loading="lazy" class="artificial-filter-img">
+                <div class="grade-overlay-badge badge-artificial">
+                  <span class="badge-icon">✖</span>
+                  <div>
+                    <strong>HARSH ARTIFICIAL FILTER</strong>
+                    <small>Unrealistic Orange Tint · Washed Out Details · Plastic Skin Blurring</small>
+                  </div>
+                </div>
               </div>
-              <!-- Draggable Divider Line & Handle -->
-              <div class="comp-handle" id="comp-handle" aria-label="Drag slider to compare" tabindex="0">
-                <div class="comp-handle-line"></div>
-                <div class="comp-handle-btn">
-                  <span>⟷</span>
+              <p class="grading-insight-note artificial-note">
+                <strong>What goes wrong here:</strong> Aggressive trending filters burn the bride's complexion into unnatural orange/sepia tones, destroying authentic skin identity and fine jewelry details.
+              </p>
+            </div>
+
+            <!-- View 3: Side-by-Side Dual View (Active on click) -->
+            <div class="grading-dual-grid" id="grade-dual-view" role="tabpanel" hidden>
+              <div class="dual-card card-natural">
+                <div class="dual-photo-frame">
+                  <img src="assets/portrait.webp" alt="Natural skin tone grade" loading="lazy">
+                  <span class="dual-badge badge-natural">✦ Gopi's Natural Tones</span>
+                </div>
+                <div class="dual-caption">
+                  <h5>True Melanin Depth</h5>
+                  <p>Preserves real complexion, authentic radiance, and true gold jewelry luster.</p>
+                </div>
+              </div>
+              <div class="dual-card card-artificial">
+                <div class="dual-photo-frame">
+                  <img src="assets/portrait.webp" alt="Harsh artificial filter" loading="lazy" class="artificial-filter-img">
+                  <span class="dual-badge badge-artificial">✖ Harsh Artificial Filter</span>
+                </div>
+                <div class="dual-caption">
+                  <h5>Over-Processed Tint</h5>
+                  <p>Unnatural orange cast, erased textures, and distorted skin tones.</p>
                 </div>
               </div>
             </div>
-            <p class="slider-caption">
-              ⟵ Drag slider left &amp; right to compare artificial filtering vs our authentic color grading ⟶
-            </p>
           </div>
         </div>
       </div>
@@ -683,16 +806,47 @@
          ========================================================================= -->
     <section class="album-showcase-section section-pad dark-section" id="albums">
       <div class="container">
-        <div class="album-showcase-grid reveal-on-scroll">
+        <div class="album-showcase-grid is-revealed reveal-on-scroll">
           <div class="album-visual-wrap">
-            <div class="album-main-card">
-              <img src="assets/wedding-family.webp" alt="Handcrafted 12x36 Flush-Mount Wedding Album" loading="lazy">
-              <div class="album-tag-overlay">
-                <span>Flush-Mount 12×36 Heirloom</span>
+            <!-- 3D Open Panoramic Lay-Flat Album Spread -->
+            <div class="album-book-spread" role="img" aria-label="Handcrafted 12x36 Flush-Mount Lay-Flat Wedding Album Spread">
+              <!-- Leather casing base peeking under pages -->
+              <div class="album-cover-base"></div>
+
+              <!-- Open Album Pages Container -->
+              <div class="album-pages-container">
+                <!-- Left Page: Muhurtham / Bridal Radiance -->
+                <div class="album-page album-page-left">
+                  <img src="assets/portrait.webp" alt="Bridal portrait page inside flush-mount album" loading="lazy">
+                  <div class="album-page-caption">01 · Muhurtham Radiance</div>
+                </div>
+
+                <!-- Center Seamless Spine Gutter Crease Shadow -->
+                <div class="album-spine-gutter" aria-hidden="true"></div>
+
+                <!-- Right Page: Grand Wedding Stage & Family Moments -->
+                <div class="album-page album-page-right">
+                  <img src="assets/wedding-couple.webp" alt="Panoramic couple portrait across lay-flat album spread" loading="lazy">
+                  <div class="album-page-caption">02 · The Sacred Vows</div>
+                </div>
+              </div>
+
+              <!-- Hot-Stamped Gold Foil Spine Ribbon / Seal -->
+              <div class="album-gold-foil-ribbon">
+                <span class="foil-star">✦</span>
+                <span>HANDCRAFTED 12×36 SEAMLESS LAY-FLAT ALBUM · ARCHIVAL SILK</span>
+                <span class="foil-star">✦</span>
               </div>
             </div>
-            <div class="album-inset-card">
-              <img src="assets/baby-detail.webp" alt="Album Gold Foil Embossing Detail" loading="lazy">
+
+            <!-- Companion Keepsake Presentation Box & Swatch Card -->
+            <div class="album-keepsake-box">
+              <div class="keepsake-box-inner">
+                <span class="box-foil-emblem">✦ GP ✦</span>
+                <strong>GOPI PHOTOGRAPHY</strong>
+                <small>Heirloom Archive Edition</small>
+                <div class="box-badge-chip">50-Year Archival Silk</div>
+              </div>
             </div>
           </div>
 
@@ -746,156 +900,7 @@
     </section>
 
     <!-- =========================================================================
-         08. CINEMATIC FILMS (Phase 16 - Step 27)
-         ========================================================================= -->
-    <section class="films-section section-pad dark-section" id="films">
-      <div class="container">
-        <div class="section-header-editorial light-header reveal-on-scroll">
-          <div>
-            <span class="section-kicker">MOTION &amp; SOUND</span>
-            <h2 class="section-title">Watch the Stories</h2>
-            <div class="section-title-line"></div>
-          </div>
-          <p class="section-subtitle">A moving film brings back the laughter, speeches, and rhythm of your day in ways still frames cannot.</p>
-        </div>
-
-        <div class="films-grid">
-          <!-- Film 01 -->
-          <article class="film-card reveal-on-scroll" data-video-title="Arun & Priya — Cinematic Wedding Highlight" data-video-duration="2:14">
-            <div class="film-thumb">
-              <img src="assets/wedding-couple.webp" alt="Arun & Priya Wedding Film Thumbnail" loading="lazy">
-              <span class="duration-badge">2:14</span>
-              <button class="play-btn" type="button" aria-label="Play Arun & Priya Wedding Highlight">▶</button>
-            </div>
-            <div class="film-info">
-              <span class="film-number">01</span>
-              <h3>Wedding Highlight Film</h3>
-              <p>Arun &amp; Priya · Theni</p>
-            </div>
-          </article>
-
-          <!-- Film 02 -->
-          <article class="film-card reveal-on-scroll" data-video-title="Vijay & Harini — Reception Story" data-video-duration="1:42">
-            <div class="film-thumb">
-              <img src="assets/wedding-bride.webp" alt="Vijay & Harini Reception Film Thumbnail" loading="lazy">
-              <span class="duration-badge">1:42</span>
-              <button class="play-btn" type="button" aria-label="Play Vijay & Harini Reception Film">▶</button>
-            </div>
-            <div class="film-info">
-              <span class="film-number">02</span>
-              <h3>Reception Story</h3>
-              <p>Vijay &amp; Harini · Madurai</p>
-            </div>
-          </article>
-
-          <!-- Film 03 -->
-          <article class="film-card reveal-on-scroll" data-video-title="Karthik & Divya — Engagement Reel" data-video-duration="1:18">
-            <div class="film-thumb">
-              <img src="assets/couple-2.webp" alt="Karthik & Divya Engagement Story Thumbnail" loading="lazy">
-              <span class="duration-badge">1:18</span>
-              <button class="play-btn" type="button" aria-label="Play Karthik & Divya Engagement Story">▶</button>
-            </div>
-            <div class="film-info">
-              <span class="film-number">03</span>
-              <h3>Engagement Story</h3>
-              <p>Karthik &amp; Divya · Coimbatore</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         09. TESTIMONIALS & TRUST (Phase 9 + Enhancement 5 Couple Insets)
-         ========================================================================= -->
-    <section class="trust-section section-pad" id="testimonials">
-      <div class="container">
-        <!-- Trust Statistics (Step 19) -->
-        <div class="trust-stats-strip reveal-on-scroll">
-          <div class="stat-unit">
-            <strong>500+</strong>
-            <span>Celebrations Covered</span>
-          </div>
-          <div class="stat-unit">
-            <strong>10+</strong>
-            <span>Years of Craft</span>
-          </div>
-          <div class="stat-unit">
-            <strong>15+</strong>
-            <span>Districts in Tamil Nadu</span>
-          </div>
-          <div class="stat-unit">
-            <strong>4.9 ★</strong>
-            <span>100+ Real Client Reviews</span>
-          </div>
-        </div>
-
-        <div class="section-header-editorial text-center-header reveal-on-scroll">
-          <span class="section-kicker">REAL FAMILIES</span>
-          <h2 class="section-title">People We've Photographed</h2>
-          <div class="section-title-line"></div>
-          <p class="section-subtitle">Real words from couples and families whose stories we have had the honour to tell.</p>
-        </div>
-
-        <div class="testimonials-grid">
-          <!-- Featured Big Testimonial with Photo Inset (Enhancement 5) -->
-          <blockquote class="testimonial-card featured-testimonial reveal-on-scroll">
-            <div class="testimonial-top">
-              <div class="stars">★★★★★</div>
-              <img class="couple-avatar" src="assets/couple-1.webp" alt="Priya & Arun Theni" loading="lazy">
-            </div>
-            <p class="quote-text">
-              “They captured moments we didn't even realise were happening. Looking through our wedding album, my mother cried again seeing her candid hug with my grandmother. Gopi and his team were polite, quiet, and incredibly professional throughout the two days.”
-            </p>
-            <footer>
-              <strong>Priya &amp; Arun</strong>
-              <span>Theni · Wedding &amp; Reception</span>
-            </footer>
-          </blockquote>
-
-          <!-- Testimonial 02 -->
-          <blockquote class="testimonial-card reveal-on-scroll">
-            <div class="testimonial-top">
-              <div class="stars">★★★★★</div>
-              <img class="couple-avatar" src="assets/wedding-couple.webp" alt="Harini & Vijay Madurai" loading="lazy">
-            </div>
-            <p class="quote-text">
-              “Natural skin tones was our number one request. We didn't want plastic edits. Gopi delivered exactly what he promised: elegant, cinematic photographs that look exactly like us on our happiest day.”
-            </p>
-            <footer>
-              <strong>Harini &amp; Vijay</strong>
-              <span>Madurai · Grand Reception</span>
-            </footer>
-          </blockquote>
-
-          <!-- Testimonial 03 -->
-          <blockquote class="testimonial-card reveal-on-scroll">
-            <div class="testimonial-top">
-              <div class="stars">★★★★★</div>
-              <img class="couple-avatar" src="assets/couple-2.webp" alt="Divya & Karthik Coimbatore" loading="lazy">
-            </div>
-            <p class="quote-text">
-              “From the outdoor pre-wedding session in Theni to our engagement ceremony, the crew made us feel totally relaxed. Even my camera-shy fiancé was smiling naturally within five minutes!”
-            </p>
-            <footer>
-              <strong>Divya &amp; Karthik</strong>
-              <span>Coimbatore · Engagement</span>
-            </footer>
-          </blockquote>
-        </div>
-
-        <div class="google-reviews-badge reveal-on-scroll">
-          <div class="google-logo">G</div>
-          <div>
-            <strong>4.9 / 5 Rating</strong>
-            <span>Based on 100+ Verified Client Reviews across Tamil Nadu</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         10. PACKAGES & ADD-ONS (Phase 7 - Step 15 & Phase 8 - Step 16)
+         09. PACKAGES & ADD-ONS (Phase 7 - Step 15 & Phase 8 - Step 16)
          ========================================================================= -->
     <section class="packages-section section-pad" id="packages">
       <div class="container">
@@ -1005,16 +1010,109 @@
     </section>
 
     <!-- =========================================================================
+         09. TESTIMONIALS & TRUST (Phase 9 + Enhancement 5 Couple Insets)
+         ========================================================================= -->
+    <section class="trust-section section-pad" id="testimonials">
+      <div class="container">
+        <!-- Trust Statistics (Step 19) -->
+        <div class="trust-stats-strip reveal-on-scroll">
+          <div class="stat-unit">
+            <strong>500+</strong>
+            <span>Celebrations Covered</span>
+          </div>
+          <div class="stat-unit">
+            <strong>10+</strong>
+            <span>Years of Craft</span>
+          </div>
+          <div class="stat-unit">
+            <strong>15+</strong>
+            <span>Districts in Tamil Nadu</span>
+          </div>
+          <div class="stat-unit">
+            <strong>4.9 ★</strong>
+            <span>100+ Real Client Reviews</span>
+          </div>
+        </div>
+
+        <div class="section-header-editorial text-center-header reveal-on-scroll">
+          <span class="section-kicker">REAL FAMILIES</span>
+          <h2 class="section-title">People We've Photographed</h2>
+          <div class="section-title-line"></div>
+          <p class="section-subtitle">Real words from couples and families whose stories we have had the honour to tell.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Featured Big Testimonial with Photo Inset (Enhancement 5) -->
+          <blockquote class="testimonial-card featured-testimonial reveal-on-scroll">
+            <div class="testimonial-top">
+              <div class="stars">★★★★★</div>
+              <img class="couple-avatar" src="assets/couple-1.webp" alt="Priya & Arun Theni" loading="lazy">
+            </div>
+            <p class="quote-text">
+              “They captured moments we didn't even realise were happening. Looking through our wedding album, my mother cried again seeing her candid hug with my grandmother. Gopi and his team were polite, quiet, and incredibly professional throughout the two days.”
+            </p>
+            <footer>
+              <strong>Priya &amp; Arun</strong>
+              <span>Theni · Wedding &amp; Reception</span>
+            </footer>
+          </blockquote>
+
+          <!-- Testimonial 02 -->
+          <blockquote class="testimonial-card reveal-on-scroll">
+            <div class="testimonial-top">
+              <div class="stars">★★★★★</div>
+              <img class="couple-avatar" src="assets/wedding-couple.webp" alt="Harini & Vijay Madurai" loading="lazy">
+            </div>
+            <p class="quote-text">
+              “Natural skin tones was our number one request. We didn't want plastic edits. Gopi delivered exactly what he promised: elegant, cinematic photographs that look exactly like us on our happiest day.”
+            </p>
+            <footer>
+              <strong>Harini &amp; Vijay</strong>
+              <span>Madurai · Grand Reception</span>
+            </footer>
+          </blockquote>
+
+          <!-- Testimonial 03 -->
+          <blockquote class="testimonial-card reveal-on-scroll">
+            <div class="testimonial-top">
+              <div class="stars">★★★★★</div>
+              <img class="couple-avatar" src="assets/couple-2.webp" alt="Divya & Karthik Coimbatore" loading="lazy">
+            </div>
+            <p class="quote-text">
+              “From the outdoor pre-wedding session in Theni to our engagement ceremony, the crew made us feel totally relaxed. Even my camera-shy fiancé was smiling naturally within five minutes!”
+            </p>
+            <footer>
+              <strong>Divya &amp; Karthik</strong>
+              <span>Coimbatore · Engagement</span>
+            </footer>
+          </blockquote>
+        </div>
+
+        <div class="google-reviews-badge reveal-on-scroll">
+          <div class="google-logo">G</div>
+          <div>
+            <strong>4.9 / 5 Rating</strong>
+            <span>Based on 100+ Verified Client Reviews across Tamil Nadu</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
          11. ABOUT GOPI (Phase 10 - Step 20)
          ========================================================================= -->
     <section class="about-section section-pad" id="about">
       <div class="container">
         <div class="about-grid reveal-on-scroll">
-          <div class="about-photo-wrap">
-            <img src="assets/portrait.webp" alt="Gopi - Founder and Lead Photographer" loading="lazy">
+          <div class="about-photo-wrap about-brand-card">
+            <div class="about-logo-frame">
+              <div class="logo-backdrop-glow" aria-hidden="true"></div>
+              <img src="assets/logo.png" alt="Gopi Photography Official Studio Logo" class="about-studio-logo" loading="lazy">
+              <div class="logo-inner-ring" aria-hidden="true"></div>
+            </div>
             <div class="about-badge">
-              <strong>GOPI</strong>
-              <small>FOUNDER &amp; LEAD PHOTOGRAPHER</small>
+              <strong>GOPI PHOTOGRAPHY</strong>
+              <small>FOUNDER &amp; LEAD PHOTOGRAPHER · THENI</small>
             </div>
           </div>
 
@@ -1063,15 +1161,11 @@
             <p>Share your event date, venue, and vision via our quick WhatsApp form.</p>
           </div>
 
-          <div class="step-arrow">→</div>
-
           <div class="step-card">
             <span class="step-num">02</span>
             <h4>Check availability</h4>
             <p>We confirm our schedule promptly and send personalized portfolio samples.</p>
           </div>
-
-          <div class="step-arrow">→</div>
 
           <div class="step-card">
             <span class="step-num">03</span>
@@ -1079,23 +1173,17 @@
             <p>Pick a starting package and tailor it with only the options you genuinely need.</p>
           </div>
 
-          <div class="step-arrow">→</div>
-
           <div class="step-card">
             <span class="step-num">04</span>
             <h4>Meet &amp; discuss details</h4>
             <p>We review your wedding timeline, family shot list, and special rituals together.</p>
           </div>
 
-          <div class="step-arrow">→</div>
-
           <div class="step-card">
             <span class="step-num">05</span>
             <h4>We photograph your day</h4>
             <p>Our team arrives early, quietly documenting every real emotion and ritual.</p>
           </div>
-
-          <div class="step-arrow">→</div>
 
           <div class="step-card">
             <span class="step-num">06</span>
@@ -1179,8 +1267,12 @@
           <p class="section-subtitle">
             Behind the scenes, fresh ceremony snippets, and newly edited wedding previews on Instagram.
           </p>
-          <a class="insta-handle-link" href="https://instagram.com/gopi_photos_" target="_blank" rel="noopener noreferrer" data-track="instagram_handle_click">
-            @GOPI_PHOTOS_ ↗
+          <a class="insta-handle-link insta-logo-only" href="https://instagram.com/gopi_photos_" target="_blank" rel="noopener noreferrer" data-track="instagram_handle_click" aria-label="Visit Gopi Photography on Instagram">
+            <svg class="instagram-icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
           </a>
         </div>
 
@@ -1213,7 +1305,13 @@
 
         <div class="insta-cta-wrap reveal-on-scroll">
           <a class="btn-secondary" href="https://instagram.com/gopi_photos_" target="_blank" rel="noopener noreferrer" data-track="instagram_follow_btn">
-            Follow on Instagram →
+            <svg class="instagram-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>Follow on Instagram</span>
+            <span class="arrow">→</span>
           </a>
         </div>
       </div>
@@ -1372,11 +1470,17 @@
         <!-- 7-Step Enquiry Form (Step 23) -->
         <div class="enquire-form-wrapper reveal-on-scroll">
           <form id="booking-form" class="editorial-form" novalidate>
+            <div class="form-mandatory-notice">
+              <span class="pulse-dot"></span>
+              <span>All 9 fields below are mandatory to check date availability</span>
+            </div>
+
             <!-- Step 1: Your Name -->
             <div class="form-step-group">
               <label for="f-name">
                 <span class="step-indicator">Step 1</span>
-                Your Name / Couple Names
+                <span>Your Name / Couple Names</span>
+                <span class="req-star" aria-label="Mandatory field">*</span>
               </label>
               <input type="text" id="f-name" name="name" required placeholder="e.g. Arun &amp; Priya" autocomplete="name">
             </div>
@@ -1385,7 +1489,8 @@
             <div class="form-step-group">
               <label for="f-phone">
                 <span class="step-indicator">Step 2</span>
-                WhatsApp Number
+                <span>WhatsApp Number</span>
+                <span class="req-star" aria-label="Mandatory field">*</span>
               </label>
               <input type="tel" id="f-phone" name="phone" required placeholder="e.g. 98765 43210" autocomplete="tel">
             </div>
@@ -1395,10 +1500,11 @@
               <div class="form-step-group">
                 <label for="f-event">
                   <span class="step-indicator">Step 3</span>
-                  Event Type
+                  <span>Event Type</span>
+                  <span class="req-star" aria-label="Mandatory field">*</span>
                 </label>
                 <select id="f-event" name="event" required>
-                  <option value="">Select celebration</option>
+                  <option value="">Select celebration *</option>
                   <option value="Wedding">Wedding</option>
                   <option value="Reception">Reception</option>
                   <option value="Wedding + Reception">Wedding + Reception</option>
@@ -1414,7 +1520,8 @@
               <div class="form-step-group">
                 <label for="f-date">
                   <span class="step-indicator">Step 4</span>
-                  Event Date
+                  <span>Event Date</span>
+                  <span class="req-star" aria-label="Mandatory field">*</span>
                 </label>
                 <input type="date" id="f-date" name="date" required>
               </div>
@@ -1425,7 +1532,8 @@
               <div class="form-step-group">
                 <label for="f-location">
                   <span class="step-indicator">Step 5</span>
-                  Location / Venue
+                  <span>Location / Venue</span>
+                  <span class="req-star" aria-label="Mandatory field">*</span>
                 </label>
                 <input type="text" id="f-location" name="location" required placeholder="e.g. Theni, Madurai, Coimbatore">
               </div>
@@ -1434,10 +1542,11 @@
               <div class="form-step-group">
                 <label for="f-coverage">
                   <span class="step-indicator">Step 6</span>
-                  Desired Coverage
+                  <span>Desired Coverage</span>
+                  <span class="req-star" aria-label="Mandatory field">*</span>
                 </label>
                 <select id="f-coverage" name="coverage" required>
-                  <option value="">Select coverage type</option>
+                  <option value="">Select coverage type *</option>
                   <option value="Photography Only">Photography Only</option>
                   <option value="Photography + Video">Photography + Video</option>
                   <option value="Cinematic (Photo + Film + Drone)">Cinematic (Photo + Film + Drone)</option>
@@ -1450,10 +1559,11 @@
               <div class="form-step-group">
                 <label for="f-package">
                   <span class="step-indicator">Package</span>
-                  Selected Package
+                  <span>Selected Package</span>
+                  <span class="req-star" aria-label="Mandatory field">*</span>
                 </label>
-                <select id="f-package" name="package">
-                  <option value="Need recommendation">Need recommendation</option>
+                <select id="f-package" name="package" required>
+                  <option value="">Select package *</option>
                   <option value="Essential — Starting from ₹12,000">Essential — From ₹12,000</option>
                   <option value="Signature — Starting from ₹18,000">Signature — From ₹18,000 (Most Popular)</option>
                   <option value="Cinematic — Starting from ₹25,000">Cinematic — From ₹25,000</option>
@@ -1464,10 +1574,11 @@
               <div class="form-step-group">
                 <label for="f-budget">
                   <span class="step-indicator">Budget</span>
-                  Approximate Budget
+                  <span>Approximate Budget</span>
+                  <span class="req-star" aria-label="Mandatory field">*</span>
                 </label>
-                <select id="f-budget" name="budget">
-                  <option value="Not decided yet">Not decided yet</option>
+                <select id="f-budget" name="budget" required>
+                  <option value="">Select budget range *</option>
                   <option value="Under ₹20,000">Under ₹20,000</option>
                   <option value="₹20,000 – ₹40,000">₹20,000 – ₹40,000</option>
                   <option value="₹40,000 – ₹70,000">₹40,000 – ₹70,000</option>
@@ -1476,21 +1587,22 @@
               </div>
             </div>
 
-            <!-- Step 7: Anything we should know? -->
+            <!-- Step 7: Event Details & Notes -->
             <div class="form-step-group">
               <label for="f-notes">
                 <span class="step-indicator">Step 7</span>
-                Anything we should know?
+                <span>Event Details &amp; Notes</span>
+                <span class="req-star" aria-label="Mandatory field">*</span>
               </label>
-              <textarea id="f-notes" name="notes" rows="3" placeholder="Approximate hours, venue name, drone requirement, number of guests, or special traditions..."></textarea>
+              <textarea id="f-notes" name="notes" rows="3" required placeholder="Please share event timing, hall/venue name, expected guest count, or any special traditions..."></textarea>
             </div>
 
             <button type="submit" class="form-submit-btn" data-track="enquiry_submit">
-              <span>Check Availability →</span>
+              <span>Check Availability on WhatsApp →</span>
             </button>
 
             <p class="form-disclaimer">
-              Your enquiry will open directly in WhatsApp with a prefilled message. Sending an enquiry does not confirm a booking. We will review availability and send our tailored proposal.
+              ✦ All 9 details above will open formatted directly into WhatsApp with Gopi Photography for fast 2–4 hour confirmation.
             </p>
           </form>
         </div>
@@ -1506,7 +1618,7 @@
     <div class="container footer-container">
       <div class="footer-top">
         <div class="footer-brand-col">
-          <a class="footer-brand" href="#top">
+          <a class="footer-brand" href="#home">
             <img src="assets/logo.png" alt="Gopi Photography Logo" class="brand-logo-img footer-logo-img" width="50" height="50">
             <div class="brand-info">
               <strong>GOPI PHOTOGRAPHY</strong>
@@ -1522,23 +1634,46 @@
         <div class="footer-nav-col">
           <span class="footer-col-title">Explore</span>
           <ul>
-            <li><a href="#work">Weddings</a></li>
-            <li><a href="#work">Portraits</a></li>
-            <li><a href="#films">Films</a></li>
-            <li><a href="#stories">Stories</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#work">Work &amp; Portraits</a></li>
+            <li><a href="#stories">Featured Stories</a></li>
+            <li><a href="#films">Cinematic Films</a></li>
             <li><a href="#albums">Heirloom Albums</a></li>
-            <li><a href="#packages">Packages</a></li>
-            <li><a href="#journal">Journal</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#packages">Investment Packages</a></li>
+            <li><a href="#about">Behind the Camera</a></li>
+            <li><a href="#journal">Wedding Guides</a></li>
           </ul>
         </div>
 
         <div class="footer-nav-col">
           <span class="footer-col-title">Connect</span>
           <ul>
-            <li><a href="https://instagram.com/gopi_photos_" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="https://wa.me/919500515932" target="_blank" rel="noopener">WhatsApp</a></li>
-            <li><a href="tel:+919500515932">Phone Call</a></li>
+            <li>
+              <a href="https://instagram.com/gopi_photos_" target="_blank" rel="noopener" class="footer-social-link">
+                <svg class="instagram-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/919500515932" target="_blank" rel="noopener" class="footer-social-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                  <path d="M20.52 3.48A11.93 11.93 0 0012.06 0C5.46 0 .09 5.37.09 11.97c0 2.11.55 4.17 1.6 6L0 24l6.21-1.63a11.93 11.93 0 005.85 1.51h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-.12-6.22-3.52-8.43zM12.06 21.9a9.92 9.92 0 01-5.06-1.39l-.36-.21-3.76.99 1-3.66-.23-.38a9.9 9.9 0 01-1.52-5.28c0-5.48 4.46-9.94 9.94-9.94 2.65 0 5.14 1.03 7.02 2.91a9.88 9.88 0 012.91 7.03c0 5.48-4.46 9.93-9.94 9.93z"/>
+                </svg>
+                <span>WhatsApp Direct</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+919500515932" class="footer-social-link" aria-label="Call Gopi Photography">
+                <svg class="phone-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>Direct Call</span>
+              </a>
+            </li>
             <li><a href="#enquire">Check Your Date →</a></li>
           </ul>
         </div>
