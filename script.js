@@ -736,7 +736,72 @@ document.addEventListener('DOMContentLoaded', () => {
   legalModalBackdrop?.addEventListener('click', closeLegalModal);
 
   // =========================================================================
-  // 17. Global Keyboard Handlers
+  // 17. Floating WhatsApp Live Chat Widget
+  // =========================================================================
+  const waToggleBtn = document.getElementById('wa-toggle-btn');
+  const waChatPopup = document.getElementById('wa-chat-popup');
+  const waCloseBtn = document.getElementById('wa-close-btn');
+  const waUnreadBadge = document.getElementById('wa-unread-badge');
+  const waChatFooter = document.getElementById('wa-chat-footer');
+  const waCustomInput = document.getElementById('wa-custom-input');
+  const waPromptChips = document.querySelectorAll('.wa-prompt-chip');
+
+  const openWaChat = () => {
+    waChatPopup?.removeAttribute('hidden');
+    if (waUnreadBadge) waUnreadBadge.style.display = 'none';
+    waCustomInput?.focus();
+    trackEvent('whatsapp_widget_open');
+  };
+
+  const closeWaChat = () => {
+    waChatPopup?.setAttribute('hidden', '');
+  };
+
+  waToggleBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (waChatPopup?.hasAttribute('hidden')) {
+      openWaChat();
+    } else {
+      closeWaChat();
+    }
+  });
+
+  waCloseBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeWaChat();
+  });
+
+  // Close WhatsApp popup when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!waChatPopup?.hasAttribute('hidden') && !waChatPopup?.contains(e.target) && !waToggleBtn?.contains(e.target)) {
+      closeWaChat();
+    }
+  });
+
+  // Quick Prompt Chips
+  waPromptChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const msg = chip.getAttribute('data-msg') || 'Hello Gopi Photography, I would like to enquire about your services.';
+      const waUrl = `https://wa.me/919500515932?text=${encodeURIComponent(msg)}`;
+      trackEvent('whatsapp_quick_prompt', { prompt: msg });
+      window.open(waUrl, '_blank', 'noopener,noreferrer');
+      closeWaChat();
+    });
+  });
+
+  // Custom Message Form
+  waChatFooter?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const customMsg = waCustomInput?.value.trim() || 'Hello Gopi Photography, I would like to check availability for my celebration.';
+    const waUrl = `https://wa.me/919500515932?text=${encodeURIComponent(customMsg)}`;
+    trackEvent('whatsapp_custom_send', { message: customMsg });
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+    if (waCustomInput) waCustomInput.value = '';
+    closeWaChat();
+  });
+
+  // =========================================================================
+  // 18. Global Keyboard Handlers
   // =========================================================================
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
