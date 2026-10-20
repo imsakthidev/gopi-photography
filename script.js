@@ -12,6 +12,20 @@
  * 9. Story Chapter Modal, Portfolio Filter, Lightbox & WhatsApp Engine
  */
 
+// =========================================================================
+// Security: Defense-in-depth Anti-Clickjacking Framebuster
+// =========================================================================
+if (window.top !== window.self) {
+  try {
+    window.top.location = window.self.location;
+  } catch (err) {
+    document.documentElement.style.display = 'none';
+  }
+}
+
+const PAGE_LOAD_TIME = Date.now();
+let lastFormSubmitTime = 0;
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // =========================================================================
@@ -725,16 +739,45 @@ document.addEventListener('DOMContentLoaded', () => {
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
+      // Security Check 1: Anti-Bot Honeypot trap
       const formData = new FormData(bookingForm);
-      const name = (formData.get('name') || '').toString().trim();
-      const phone = (formData.get('phone') || '').toString().trim();
-      const eventType = (formData.get('event') || '').toString().trim();
-      const date = (formData.get('date') || '').toString().trim();
-      const location = (formData.get('location') || '').toString().trim();
-      const coverage = (formData.get('coverage') || '').toString().trim();
-      const selectedPkg = (formData.get('package') || '').toString().trim();
-      const budget = (formData.get('budget') || '').toString().trim();
-      const notes = (formData.get('notes') || '').toString().trim();
+      const botTrap = (formData.get('_sec_website') || '').toString().trim();
+      if (botTrap !== '') {
+        console.warn('Bot submission blocked.');
+        return;
+      }
+
+      // Security Check 2: Submission Velocity (Automated bot filter)
+      if (Date.now() - PAGE_LOAD_TIME < 1500) {
+        console.warn('Rapid submission filtered.');
+        return;
+      }
+
+      // Security Check 3: Rate Limiting & Double-click debounce
+      if (Date.now() - lastFormSubmitTime < 3500) {
+        return;
+      }
+      lastFormSubmitTime = Date.now();
+
+      // Input Sanitization Helper (defense against XSS & script injection)
+      const sanitizeInput = (val, maxLen = 300) => {
+        if (!val || typeof val !== 'string') return '';
+        return val
+          .slice(0, maxLen)
+          .replace(/[<>'"`;\\]/g, '')
+          .replace(/[\x00-\x1F\x7F]/g, '')
+          .trim();
+      };
+
+      const name = sanitizeInput((formData.get('name') || '').toString(), 80);
+      const phone = sanitizeInput((formData.get('phone') || '').toString(), 25);
+      const eventType = sanitizeInput((formData.get('event') || '').toString(), 60);
+      const date = sanitizeInput((formData.get('date') || '').toString(), 40);
+      const location = sanitizeInput((formData.get('location') || '').toString(), 100);
+      const coverage = sanitizeInput((formData.get('coverage') || '').toString(), 120);
+      const selectedPkg = sanitizeInput((formData.get('package') || '').toString(), 80);
+      const budget = sanitizeInput((formData.get('budget') || '').toString(), 60);
+      const notes = sanitizeInput((formData.get('notes') || '').toString(), 400);
 
       // Check all 9 mandatory fields
       const mandatoryFields = [
@@ -767,6 +810,16 @@ document.addEventListener('DOMContentLoaded', () => {
         firstInvalidEl.focus();
         firstInvalidEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
         alert(`All 9 fields are mandatory to check date availability.\nPlease complete:\n• ${missingList.join('\n• ')}`);
+        return;
+      }
+
+      // Security Check 4: WhatsApp phone format validation
+      const phoneDigits = phone.replace(/\D/g, '');
+      if (phoneDigits.length < 8 || phoneDigits.length > 15) {
+        const phoneEl = document.getElementById('f-phone');
+        phoneEl?.classList.add('field-invalid');
+        phoneEl?.focus();
+        alert('Please enter a valid WhatsApp contact number (at least 8 to 10 digits).');
         return;
       }
 
@@ -907,15 +960,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Custom Message Form
+  // Custom Message Form with Security Honeypot & Input Sanitization
   waChatFooter?.addEventListener('submit', (e) => {
     e.preventDefault();
-    const customMsg = waCustomInput?.value.trim() || 'Hello Gopi Photography, I would like to check availability for my celebration.';
+
+    // Check honeypot
+    const hp = waChatFooter.elements['_sec_wa']?.value;
+    if (hp) return;
+
+    const rawMsg = waCustomInput?.value.trim() || 'Hello Gopi Photography, I would like to check availability for my celebration.';
+    const customMsg = rawMsg.slice(0, 500).replace(/[<>'"`;\\]/g, '').replace(/[\x00-\x1F\x7F]/g, '').trim();
+
     const waUrl = `https://wa.me/919500515932?text=${encodeURIComponent(customMsg)}`;
     trackEvent('whatsapp_custom_send', { message: customMsg });
     window.open(waUrl, '_blank', 'noopener,noreferrer');
     if (waCustomInput) waCustomInput.value = '';
     closeWaChat();
+  });
+
+  // =========================================================================
+  // Security & Client Photograph Copyright Protection
+  // =========================================================================
+  let toastTimer = null;
+  const showSecurityToast = (msg) => {
+    let toast = document.getElementById('sec-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'sec-toast';
+      toast.className = 'portfolio-security-toast';
+      toast.setAttribute('role', 'status');
+      toast.setAttribute('aria-live', 'polite');
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = `<span class="sec-icon">✦</span><span>${msg}</span>`;
+    toast.classList.add('active');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.remove('active');
+    }, 3200);
+  };
+
+  // Prevent right-click image scraping on client portraits & story photos
+  document.addEventListener('contextmenu', (e) => {
+    const target = e.target;
+    if (target && target.tagName === 'IMG' && !target.classList.contains('brand-logo-img')) {
+      e.preventDefault();
+      showSecurityToast('Photographs are copyrighted by Gopi Photography. For high-res client galleries, please contact us.');
+    }
   });
 
   // =========================================================================
