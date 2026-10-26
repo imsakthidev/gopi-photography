@@ -720,6 +720,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // URL query parameter synchronization (e.g., /contact.html?package=Signature)
+  if (packageSelect) {
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const pkgQuery = urlParams.get('package');
+      if (pkgQuery) {
+        for (const opt of packageSelect.options) {
+          if (opt.value.toLowerCase().includes(pkgQuery.toLowerCase())) {
+            packageSelect.value = opt.value;
+            packageSelect.classList.remove('field-invalid');
+            if (budgetSelect) {
+              if (opt.value.includes('Essential')) {
+                budgetSelect.value = 'Under ₹20,000';
+              } else if (opt.value.includes('Signature')) {
+                budgetSelect.value = '₹20,000 – ₹40,000';
+              } else if (opt.value.includes('Cinematic')) {
+                budgetSelect.value = '₹20,000 – ₹40,000';
+              }
+              budgetSelect.classList.remove('field-invalid');
+            }
+            packageSelect.classList.add('field-highlight-pulse');
+            break;
+          }
+        }
+      }
+    } catch (e) {
+      // safe fallback
+    }
+  }
+
   // =========================================================================
   // 15. All 9 Columns Mandatory Validation & WhatsApp Submission
   // =========================================================================

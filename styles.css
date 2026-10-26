@@ -797,6 +797,64 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
+   Multi-Page Subpage Banner
+   ========================================================================== */
+.page-banner {
+  position: relative;
+  padding: 160px 24px 60px;
+  background: 
+    radial-gradient(1000px circle at 50% 25%, rgba(226, 112, 46, 0.12) 0%, rgba(168, 137, 93, 0.06) 40%, transparent 80%),
+    linear-gradient(180deg, #161514 0%, #11100E 100%);
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.page-banner-container {
+  max-width: 920px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.page-banner-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.page-banner-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-weight: 500;
+  color: var(--primary);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.015em;
+}
+
+.page-banner-subtitle {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--secondary);
+  line-height: 1.65;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .page-banner {
+    padding: 125px 20px 48px;
+  }
+}
+
+/* ==========================================================================
    01. HERO SECTION (Phase 4 + Enhancement 1 Cross-Fade Slideshow)
    ========================================================================== */
 

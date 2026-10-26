@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171717">
+  
+  <!-- Security & Privacy Directives -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  
+  <!-- SEO Primary Meta Tags -->
+  <title>Portfolio &amp; Wedding Stories | Gopi Photography | Theni &amp; Tamil Nadu</title>
+  <meta name="description" content="Explore candid South Indian wedding stories, traditional Muhurtham rituals, cinematic 4K films, and handcrafted lay-flat heirloom albums by Gopi Photography in Theni, Madurai, Coimbatore, and Tamil Nadu.">
+  <link rel="canonical" href="https://gopiphotography.vercel.app/portfolio.html">
+
+  <!-- Favicon / Logo -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Gopi Photography">
+  <meta property="og:url" content="https://gopiphotography.vercel.app/portfolio.html">
+  <meta property="og:title" content="Portfolio &amp; Wedding Stories | GOPI PHOTOGRAPHY">
+  <meta property="og:description" content="Candid wedding photography, cinematic films, and timeless portraits across Tamil Nadu.">
+  <meta property="og:image" content="https://gopiphotography.vercel.app/assets/logo.png">
+
+  <!-- Google Fonts: Cormorant Garamond & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Viewport Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Background Ambient Floating Glow Orbs -->
+  <div class="ambient-glow-wrapper" aria-hidden="true">
+    <div class="ambient-glow-orb glow-top-right"></div>
+    <div class="ambient-glow-orb glow-bottom-left"></div>
+  </div>
+
+  <!-- Interactive Radial Mouse Follower Spotlight -->
+  <div class="mouse-radial-glow" id="mouse-radial-glow" aria-hidden="true"></div>
+
+  <!-- Custom Interactive Cursor -->
+  <div class="custom-cursor" id="custom-cursor" aria-hidden="true">
+    <span class="cursor-text" id="cursor-text">VIEW</span>
+  </div>
+
+  <!-- =========================================================================
+       HEADER / NAVIGATION
+       ========================================================================= -->
+  <header class="topbar" id="header">
+    <div class="topbar-container">
+      <a class="brand" href="/" aria-label="GOPI PHOTOGRAPHY home">
+        <img src="assets/logo.png" alt="Gopi Photography Logo" class="brand-logo-img" width="44" height="44">
+        <span class="brand-name">
+          <strong>GOPI PHOTOGRAPHY</strong>
+          <small>STUDIO · TAMIL NADU</small>
+        </span>
+      </a>
+
+      <!-- Desktop Nav (5 Pages) -->
+      <nav class="nav-links" id="nav-links" aria-label="Main Navigation">
+        <a href="/" data-track="nav_home">Home</a>
+        <a href="/portfolio.html" class="active" data-track="nav_portfolio">Portfolio</a>
+        <a href="/packages.html" data-track="nav_packages">Packages</a>
+        <a href="/about.html" data-track="nav_about">About</a>
+        <a href="/contact.html" data-track="nav_contact">Contact</a>
+        <div class="mobile-nav-footer">
+          <a href="/contact.html" class="mobile-nav-cta">Check Your Date →</a>
+          <div class="mobile-social-links">
+            <a href="https://instagram.com/gopi_photos_" target="_blank" rel="noopener noreferrer" class="social-link-item" aria-label="Gopi Photography Instagram">
+              <svg class="instagram-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>Instagram</span>
+            </a>
+            <a href="https://wa.me/919500515932" target="_blank" rel="noopener noreferrer" class="social-link-item" aria-label="Gopi Photography WhatsApp">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                <path d="M20.52 3.48A11.93 11.93 0 0012.06 0C5.46 0 .09 5.37.09 11.97c0 2.11.55 4.17 1.6 6L0 24l6.21-1.63a11.93 11.93 0 005.85 1.51h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-.12-6.22-3.52-8.43zM12.06 21.9a9.92 9.92 0 01-5.06-1.39l-.36-.21-3.76.99 1-3.66-.23-.38a9.9 9.9 0 01-1.52-5.28c0-5.48 4.46-9.94 9.94-9.94 2.65 0 5.14 1.03 7.02 2.91a9.88 9.88 0 012.91 7.03c0 5.48-4.46 9.93-9.94 9.93z"/>
+              </svg>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Desktop CTA & Status Pill -->
+      <div class="topbar-actions">
+        <div class="availability-pill topbar-pill" title="Wedding calendar status">
+          <span class="pulse-dot"></span>
+          <span class="pill-text">2026–27 Calendar Open</span>
+        </div>
+        <a href="/contact.html" class="btn-primary header-cta-btn" style="padding: 10px 18px; font-size: 0.82rem;">Check Date →</a>
+        <button class="mobile-menu-btn" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+      <div class="page-banner-container reveal-on-scroll">
+        <span class="page-banner-kicker">✦ CURATED VISUAL ARCHIVE ✦</span>
+        <h1 class="page-banner-title">Frames of Feeling &amp; Living Stories</h1>
+        <p class="page-banner-subtitle">
+          From early dawn Muhurtham mantras to unscripted reception laughter. Explore our authentic photographs, wedding story chapters, 4K films, and handcrafted lay-flat heirloom albums.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         01. PORTFOLIO GALLERY (With Category Filter & Lightbox)
+         ========================================================================= -->
+    <section class="portfolio-section section-pad" id="work">
+      <div class="container">
+        <div class="section-header-editorial reveal-on-scroll">
+          <div>
+            <span class="section-kicker">CURATED MOMENTS</span>
+            <h2 class="section-title">The Gallery</h2>
+            <div class="section-title-line"></div>
+          </div>
+          <p class="section-subtitle">Every photograph in our archive is crafted with natural lighting, unwhitewashed skin tones, and respectful preservation of your family's identity.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <nav class="portfolio-filters reveal-on-scroll" aria-label="Portfolio category filter">
+          <button class="filter-tab active" data-filter="all">ALL</button>
+          <button class="filter-tab" data-filter="weddings">WEDDINGS</button>
+          <button class="filter-tab" data-filter="engagements">ENGAGEMENTS</button>
+          <button class="filter-tab" data-filter="portraits">PORTRAITS</button>
+          <button class="filter-tab" data-filter="family">FAMILY</button>
+          <button class="filter-tab" data-filter="maternity">MATERNITY</button>
+          <button class="filter-tab" data-filter="baby">BABY</button>
+          <button class="filter-tab" data-filter="functions">FUNCTIONS</button>
+          <button class="filter-tab" data-filter="films">FILMS</button>
+        </nav>
+
+        <!-- Asymmetric Editorial Grid -->
+        <div class="portfolio-editorial-grid" id="portfolio-grid">
+          <!-- 01: Weddings / Featured Large -->
+          <figure class="gallery-item item-large reveal-on-scroll" data-category="weddings" data-src="assets/couple-1.webp" data-title="Intimate Couple Portrait" data-sub="Theni Wedding">
+            <img src="assets/couple-1.webp" alt="Intimate outdoor couple portrait" loading="lazy">
+            <figcaption>
+              <span class="cat-pill">Weddings</span>
+              <h4>Intimate Couple Portrait</h4>
+              <p>Theni, Tamil Nadu</p>
+            </figcaption>
+            <span class="zoom-badge" aria-hidden="true">⤢</span>
+          </figure>
+
+          <!-- 02: Portraits -->
+          <figure class="gallery-item reveal-on-scroll" data-category="portraits" data-src="assets/portrait.webp" data-title="Graceful Traditional Portrait" data-sub="Theni Studio">
+            <img src="assets/portrait.webp" alt="Traditional portrait with natural skin tones" loading="lazy">
+            <figcaption>
+              <span class="cat-pill">Portraits</span>
+              <h4>Graceful Traditional Portrait</h4>
+              <p>Natural beauty &amp; timeless pose</p>
+            </figcaption>
+            <span class="zoom-badge" aria-hidden="true">⤢</span>
+          </figure>
+
+          <!-- 03: Functions -->
+          <figure class="gallery-item reveal-on-scroll" data-category="functions" data-src="assets/candid.webp" data-title="Family Candid Celebration" data-sub="Madurai Function">
+            <img src="assets/candid.webp" alt="Candid laughter at family event" loading="lazy">
+            <figcaption>
+              <span class="cat-pill">Functions</span>
+              <h4>Family Candid Celebration</h4>
+              <p>Laughter between rituals</p>
+            </figcaption>
+            <span class="zoom-badge" aria-hidden="true">⤢</span>
+          </figure>
+
+          <!-- 04: Engagements -->
+          <figure class="gallery-item reveal-on-scroll" data-category="engagements" data-src="assets/couple-2.webp" data-title="Sunset Couple Pre-shoot" data-sub="Coimbatore">
+            <img src="assets/couple-2.webp" alt="Couple sharing laughter outdoors" loading="lazy">
+            <figcaption>
+              <span class="cat-pill">Engagements</span>
+              <h4>Sunset Couple Pre-shoot</h4>
+              <p>Coimbatore, Tamil Nadu</p>
+            </figcaption>
+            <span class="zoom-badge" aria-hidden="true">⤢</span>
+          </figure>
+
+          <!-- 05: Weddings / Stage Grand -->
+          <figure class="gallery-item item-wide reveal-on-scroll" data-category="weddings" data-src="assets/wedding-couple.webp" data-title="Reception Grand Entrance" data-sub="Stage Celebration">
+            <img src="assets/wedding-couple.webp" alt="Bride and groom at floral reception stage" loading="lazy">
+            <figcaption>
+              <span class="cat-pill">Weddings</span>
+              <h4>Reception Grand Entrance</h4>
+              <p>Stage celebration &amp; joy</p>
+            </figcaption>
+            <span class="zoom-badge" aria-hidden="true">⤢</span>
+          </figure>
+
+          <!-- 06: Family / Reception Group -->
+          <figure class="gallery-item reveal-on-scroll" data-category="family" data-src="assets/wedding-family.webp" data-title="Traditional Family Portrait" data-sub="Generations Together">
+            <img src="assets/wedding-family.webp" alt="Generations of family gathered on stage" loading="lazy">
+            <figcaption>
+              <span class="cat-pill">Family</span>
+              <h4>Traditional Family Portrait</h4>
+              <p>Generations gathered together</p>
+            </figcaption>
+            <span class="zoom-badge" aria-hidden="true">⤢</span>
+          </figure>
+
+          <!-- 07: Maternity / Baby Detail -->
+          <figure class="gallery-item reveal-on-scroll" data-category="maternity" data-src="assets/baby-detail.webp" data-title="Little Blessings" data-sub="Baby Shower Details">
+            <img src="assets/baby-detail.webp" alt="Baby shower tiny shoes detail photograph" loading="lazy">
+            <figcaption>
+              <span class="cat-pill">Maternity</span>
+              <h4>Little Blessings</h4>
+              <p>Baby shower details</p>
+            </figcaption>
+            <span class="zoom-badge" aria-hidden="true">⤢</span>
+          </figure>
+
+          <!-- 08: Baby / Mother -->
+          <figure class="gallery-item reveal-on-scroll" data-category="baby" data-src="assets/baby-mother.webp" data-title="Mother &amp; Child" data-sub="Tender New Memories">
+            <img src="assets/baby-mother.webp" alt="Mother holding her baby gently" loading="lazy">
+            <figcaption>
+              <span class="cat-pill">Baby</span>
+              <h4>Mother &amp; Child</h4>
+              <p>Tender new memories</p>
+            </figcaption>
+            <span class="zoom-badge" aria-hidden="true">⤢</span>
+          </figure>
+
+          <!-- 09: Baby / Milestone -->
+          <figure class="gallery-item reveal-on-scroll" data-category="baby" data-src="assets/baby-chair.webp" data-title="Innocent Joy" data-sub="First Year Milestone">
+            <img src="assets/baby-chair.webp" alt="Smiling baby seated on decorated chair" loading="lazy">
+            <figcaption>
+              <span class="cat-pill">Baby</span>
+              <h4>Innocent Joy</h4>
+              <p>First year milestone</p>
+            </figcaption>
+            <span class="zoom-badge" aria-hidden="true">⤢</span>
+          </figure>
+
+          <!-- 10: Functions / Puberty Ritual -->
+          <figure class="gallery-item reveal-on-scroll" data-category="functions" data-src="assets/puberty-ritual.webp" data-title="Sacred Family Ritual" data-sub="Cultural Ceremony">
+            <img src="assets/puberty-ritual.webp" alt="Traditional ritual ceremony in Tamil Nadu" loading="lazy">
+            <figcaption>
+              <span class="cat-pill">Functions</span>
+              <h4>Sacred Family Ritual</h4>
+              <p>Cultural ceremony &amp; tradition</p>
+            </figcaption>
+            <span class="zoom-badge" aria-hidden="true">⤢</span>
+          </figure>
+
+          <!-- 11: Films Callout Card -->
+          <figure class="gallery-item item-video-callout reveal-on-scroll" data-category="films" data-video-url="wedding-highlight" data-title="Cinematic Wedding Highlights" data-sub="Film in 4K">
+            <div class="video-preview-overlay">
+              <span class="play-icon">▶</span>
+              <h4>Cinematic Wedding Highlight</h4>
+              <p>Watch 2-minute film trailer</p>
+            </div>
+            <img src="assets/wedding-bride.webp" alt="Cinematic wedding film preview" loading="lazy">
+            <figcaption>
+              <span class="cat-pill">Films</span>
+              <h4>Cinematic Wedding Highlight</h4>
+              <p>Watch film trailer</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         02. FEATURED STORIES (Full Story Chapters)
+         ========================================================================= -->
+    <section class="stories-section section-pad" id="stories">
+      <div class="container">
+        <div class="section-header-editorial reveal-on-scroll">
+          <div>
+            <span class="section-kicker">CURATED VISUAL ESSAYS</span>
+            <h2 class="section-title">Selected Wedding Chapters</h2>
+            <div class="section-title-line"></div>
+          </div>
+          <p class="section-subtitle">Real celebrations documented from early morning rituals to the final stage farewells. Click any story to view the complete visual chapter.</p>
+        </div>
+
+        <div class="stories-grid">
+          <!-- Story 01 -->
+          <article class="story-card reveal-on-scroll" data-story="arun-priya">
+            <div class="story-image-wrap">
+              <img src="assets/wedding-couple.webp" alt="Arun and Priya Wedding Reception in Theni" loading="lazy">
+              <span class="story-tag">Wedding</span>
+            </div>
+            <div class="story-meta">
+              <span class="story-number">Story 01</span>
+              <h3 class="story-couple">Arun × Priya</h3>
+              <p class="story-location">Wedding · Theni, Tamil Nadu</p>
+              <button class="story-btn" type="button" aria-label="View Arun and Priya Wedding Story">
+                View Story <span class="arrow">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Story 02 -->
+          <article class="story-card reveal-on-scroll" data-story="vijay-harini">
+            <div class="story-image-wrap">
+              <img src="assets/wedding-bride.webp" alt="Vijay and Harini Reception in Madurai" loading="lazy">
+              <span class="story-tag">Reception</span>
+            </div>
+            <div class="story-meta">
+              <span class="story-number">Story 02</span>
+              <h3 class="story-couple">Vijay × Harini</h3>
+              <p class="story-location">Reception · Madurai, Tamil Nadu</p>
+              <button class="story-btn" type="button" aria-label="View Vijay and Harini Reception Story">
+                View Story <span class="arrow">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Story 03 -->
+          <article class="story-card reveal-on-scroll" data-story="karthik-divya">
+            <div class="story-image-wrap">
+              <img src="assets/couple-2.webp" alt="Karthik and Divya Engagement in Coimbatore" loading="lazy">
+              <span class="story-tag">Engagement</span>
+            </div>
+            <div class="story-meta">
+              <span class="story-number">Story 03</span>
+              <h3 class="story-couple">Karthik × Divya</h3>
+              <p class="story-location">Engagement · Coimbatore, Tamil Nadu</p>
+              <button class="story-btn" type="button" aria-label="View Karthik and Divya Engagement Story">
+                View Story <span class="arrow">→</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         03. CINEMATIC FILMS (Motion & Sound)
+         ========================================================================= -->
+    <section class="films-section section-pad dark-section" id="films">
+      <div class="container">
+        <div class="section-header-editorial light-header reveal-on-scroll">
+          <div>
+            <span class="section-kicker">MOTION &amp; SOUND</span>
+            <h2 class="section-title">Watch the Stories in Motion</h2>
+            <div class="section-title-line"></div>
+          </div>
+          <p class="section-subtitle">A moving film brings back the laughter, speeches, and rhythm of your day in ways still frames cannot.</p>
+        </div>
+
+        <div class="films-grid">
+          <!-- Film 01 -->
+          <article class="film-card reveal-on-scroll" data-video-title="Arun & Priya — Cinematic Wedding Highlight" data-video-duration="2:14">
+            <div class="film-thumb">
+              <img src="assets/wedding-couple.webp" alt="Arun & Priya Wedding Film Thumbnail" loading="lazy">
+              <span class="duration-badge">2:14</span>
+              <button class="play-btn" type="button" aria-label="Play Arun & Priya Wedding Highlight">▶</button>
+            </div>
+            <div class="film-info">
+              <span class="film-number">01</span>
+              <h3>Wedding Highlight Film</h3>
+              <p>Arun &amp; Priya · Theni</p>
+            </div>
+          </article>
+
+          <!-- Film 02 -->
+          <article class="film-card reveal-on-scroll" data-video-title="Vijay & Harini — Reception Story" data-video-duration="1:42">
+            <div class="film-thumb">
+              <img src="assets/wedding-bride.webp" alt="Vijay & Harini Reception Film Thumbnail" loading="lazy">
+              <span class="duration-badge">1:42</span>
+              <button class="play-btn" type="button" aria-label="Play Vijay & Harini Reception Film">▶</button>
+            </div>
+            <div class="film-info">
+              <span class="film-number">02</span>
+              <h3>Reception Story</h3>
+              <p>Vijay &amp; Harini · Madurai</p>
+            </div>
+          </article>
+
+          <!-- Film 03 -->
+          <article class="film-card reveal-on-scroll" data-video-title="Karthik & Divya — Engagement Reel" data-video-duration="1:18">
+            <div class="film-thumb">
+              <img src="assets/couple-2.webp" alt="Karthik & Divya Engagement Story Thumbnail" loading="lazy">
+              <span class="duration-badge">1:18</span>
+              <button class="play-btn" type="button" aria-label="Play Karthik & Divya Engagement Story">▶</button>
+            </div>
+            <div class="film-info">
+              <span class="film-number">03</span>
+              <h3>Engagement Story</h3>
+              <p>Karthik &amp; Divya · Coimbatore</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         04. HEIRLOOM ALBUM SHOWCASE
+         ========================================================================= -->
+    <section class="album-showcase-section section-pad dark-section" id="albums">
+      <div class="container">
+        <div class="album-showcase-grid is-revealed reveal-on-scroll">
+          <div class="album-visual-wrap">
+            <div class="album-book-spread" role="img" aria-label="Handcrafted 12x36 Flush-Mount Lay-Flat Wedding Album Spread">
+              <div class="album-cover-base"></div>
+              <div class="album-pages-container">
+                <div class="album-page album-page-left">
+                  <img src="assets/portrait.webp" alt="Bridal portrait page inside flush-mount album" loading="lazy">
+                  <div class="album-page-caption">01 · Muhurtham Radiance</div>
+                </div>
+                <div class="album-spine-gutter" aria-hidden="true"></div>
+                <div class="album-page-page-right album-page">
+                  <img src="assets/wedding-couple.webp" alt="Panoramic couple portrait across lay-flat album spread" loading="lazy">
+                  <div class="album-page-caption">02 · The Sacred Vows</div>
+                </div>
+              </div>
+              <div class="album-gold-foil-ribbon">
+                <span class="foil-star">✦</span>
+                <span>HANDCRAFTED 12×36 SEAMLESS LAY-FLAT ALBUM · ARCHIVAL SILK</span>
+                <span class="foil-star">✦</span>
+              </div>
+            </div>
+
+            <div class="album-keepsake-box">
+              <div class="keepsake-box-inner">
+                <span class="box-foil-emblem">✦ GP ✦</span>
+                <strong>GOPI PHOTOGRAPHY</strong>
+                <small>Heirloom Archive Edition</small>
+                <div class="box-badge-chip">50-Year Archival Silk</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="album-text-wrap">
+            <span class="section-kicker">PHYSICAL CRAFTSMANSHIP</span>
+            <h2 class="section-title">The Heirloom Album</h2>
+            <p class="section-subtitle">
+              Digital files are for today. A handcrafted flush-mount album is the physical heirloom your children and grandchildren will hold in their hands decades from now.
+            </p>
+
+            <div class="album-features-grid">
+              <div class="album-feature-card">
+                <span class="feat-icon">📖</span>
+                <div>
+                  <h4>12×36 Seamless Lay-Flat Binding</h4>
+                  <p>Panoramic spreads open completely flat with zero gutter cutting through the center of family stage photographs.</p>
+                </div>
+              </div>
+
+              <div class="album-feature-card">
+                <span class="feat-icon">✨</span>
+                <div>
+                  <h4>Leatherette &amp; Acrylic Covers</h4>
+                  <p>Scratch-proof, spill-resistant archival covers custom laser-embossed with couple names in metallic gold foil.</p>
+                </div>
+              </div>
+
+              <div class="album-feature-card">
+                <span class="feat-icon">🛡️</span>
+                <div>
+                  <h4>50-Year Archival Silk Paper</h4>
+                  <p>Printed on heavy-weight, non-yellowing photographic paper treated against South Indian humidity and fingerprints.</p>
+                </div>
+              </div>
+
+              <div class="album-feature-card">
+                <span class="feat-icon">👁️</span>
+                <div>
+                  <h4>Curated Editorial Sequencing</h4>
+                  <p>Every page is thoughtfully art-directed like a coffee table book, with 2 rounds of digital proofing before final binding.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="album-cta-wrap">
+              <a href="/packages.html" class="btn-primary" data-track="album_view_packages">View Album Packages &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conversion Banner -->
+    <section class="section-pad" style="background: radial-gradient(circle at 50% 50%, rgba(240, 128, 60, 0.12) 0%, #11100E 80%); border-top: 1px solid rgba(255,255,255,0.06); text-align: center;">
+      <div class="container reveal-on-scroll" style="max-width: 760px; margin: 0 auto;">
+        <span class="section-kicker">✦ SECURE YOUR DATE ✦</span>
+        <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 16px; color: var(--primary);">
+          Let's tell your celebration's story together.
+        </h2>
+        <p style="color: var(--secondary); margin-bottom: 32px; font-size: 1.05rem; line-height: 1.6;">
+          We take on a limited number of weddings each season across Theni, Madurai, Coimbatore, and Tamil Nadu. Check if your date is available.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/contact.html" class="btn-primary" style="padding: 14px 28px;">Check Date Availability &rarr;</a>
+          <a href="/packages.html" class="btn-secondary" style="padding: 14px 28px;">Explore Packages</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a class="footer-brand" href="/">
+            <img src="assets/logo.png" alt="Gopi Photography Logo" class="brand-logo-img footer-logo-img" width="50" height="50">
+            <div class="brand-info">
+              <strong>GOPI PHOTOGRAPHY</strong>
+              <small>Wedding Stories. Beautifully, Honestly Told.</small>
+            </div>
+          </a>
+          <p class="footer-tagline">
+            Candid wedding photography, cinematic films and timeless portraits for couples and families across Tamil Nadu.
+          </p>
+          <span class="footer-location-badge">📍 Based in Theni · Available Statewide</span>
+        </div>
+
+        <div class="footer-nav-col">
+          <span class="footer-col-title">Pages</span>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/portfolio.html">Portfolio &amp; Stories</a></li>
+            <li><a href="/packages.html">Investment &amp; Packages</a></li>
+            <li><a href="/about.html">About the Studio</a></li>
+            <li><a href="/contact.html">Contact &amp; Bookings</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <span class="footer-col-title">Connect</span>
+          <ul>
+            <li>
+              <a href="https://instagram.com/gopi_photos_" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                <svg class="instagram-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/919500515932" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                  <path d="M20.52 3.48A11.93 11.93 0 0012.06 0C5.46 0 .09 5.37.09 11.97c0 2.11.55 4.17 1.6 6L0 24l6.21-1.63a11.93 11.93 0 005.85 1.51h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-.12-6.22-3.52-8.43zM12.06 21.9a9.92 9.92 0 01-5.06-1.39l-.36-.21-3.76.99 1-3.66-.23-.38a9.9 9.9 0 01-1.52-5.28c0-5.48 4.46-9.94 9.94-9.94 2.65 0 5.14 1.03 7.02 2.91a9.88 9.88 0 012.91 7.03c0 5.48-4.46 9.93-9.94 9.93z"/>
+                </svg>
+                <span>WhatsApp Direct</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+919500515932" class="footer-social-link" aria-label="Call Gopi Photography">
+                <svg class="phone-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>Direct Call</span>
+              </a>
+            </li>
+            <li><a href="/contact.html">Check Your Date →</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SEO Directory & Local Coverage Areas -->
+      <div class="footer-seo-matrix">
+        <div class="seo-matrix-col">
+          <span class="seo-col-title">Districts &amp; Towns We Cover</span>
+          <p>Theni · Bodinayakanur · Cumbum · Periyakulam · Chinnamanur · Uthamapalayam · Andipatti · Thevaram · Madurai · Dindigul · Kodaikanal · Palani · Coimbatore · Pollachi · Tirupur · Erode · Salem · Trichy · Karur · Tirunelveli · Tenkasi · Tuticorin · Virudhunagar · Sivakasi · Rajapalayam · Ramanathapuram · Thanjavur · Chennai · Across Tamil Nadu &amp; South India</p>
+        </div>
+        <div class="seo-matrix-col">
+          <span class="seo-col-title">Wedding &amp; Ceremony Specialties</span>
+          <p>Candid Wedding Photography · Traditional Marriage Rituals · Tamil Muhurtham Coverage · Cinematic 4K Wedding Films · Drone Aerial Cinematography · Pre-Wedding Outdoor Shoots · Reception Highlights · Engagement Ceremonies · Haldi &amp; Sangeet · Save-The-Date Reels · Natural Skin Tone Color Grading</p>
+        </div>
+        <div class="seo-matrix-col">
+          <span class="seo-col-title">Family &amp; Cultural Functions</span>
+          <p>Valaikappu &amp; Baby Shower Photography · Seemantham Rituals · Newborn Baby Milestones · First Birthday Celebrations · Kaadhu Kuthu (Ear Piercing) · Manjal Neerattu Vizha (Puberty Ceremony) · Grihapravesam (Housewarming) · Sashtiabdhapoorthi (60th Marriage) · Sadhabishegam (80th Birthday)</p>
+        </div>
+        <div class="seo-matrix-col">
+          <span class="seo-col-title">Heirloom Albums &amp; Deliverables</span>
+          <p>Handcrafted 12×36 Lay-Flat Albums · Seamless Flush-Mount Binding · 50-Year Archival Silk Printing · Custom Leatherette Boxes · Laser-Embossed Gold Foil Names · High-Resolution Master Cloud Archive · Same-Day Instagram Reels · 4K Master Video Edits</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          © <span id="year">2026</span> Gopi Photography. All rights reserved.
+        </p>
+        <div class="legal-links">
+          <a href="#legal-privacy" class="open-legal-modal" data-modal="privacy">Privacy Policy</a>
+          <span class="sep">·</span>
+          <a href="#legal-terms" class="open-legal-modal" data-modal="terms">Terms &amp; Conditions</a>
+          <span class="sep">·</span>
+          <a href="#legal-cancellation" class="open-legal-modal" data-modal="cancellation">Cancellation Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DEDICATED STORY CHAPTER MODAL -->
+  <div class="story-modal" id="story-modal" role="dialog" aria-modal="true" aria-label="Wedding Story Chapter" hidden>
+    <div class="story-modal-backdrop" id="story-modal-backdrop"></div>
+    <div class="story-modal-panel">
+      <button class="story-modal-close" id="story-modal-close" aria-label="Close story chapter">✕</button>
+      <div class="story-modal-content" id="story-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- FULLSCREEN LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo Lightbox" hidden>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Enlarged view">
+      <div class="lightbox-caption">
+        <h4 id="lightbox-title"></h4>
+        <p id="lightbox-sub"></p>
+      </div>
+    </div>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous photo">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next photo">›</button>
+  </div>
+
+  <!-- CINEMATIC VIDEO PLAYER MODAL -->
+  <div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Wedding Video Highlight" hidden>
+    <div class="video-modal-backdrop" id="video-modal-backdrop"></div>
+    <div class="video-modal-panel">
+      <button class="video-modal-close" id="video-modal-close" aria-label="Close video player">✕</button>
+      <div class="video-player-container">
+        <div class="video-placeholder-card">
+          <span class="video-play-sym">▶</span>
+          <h3 id="video-modal-title">Wedding Highlight Film</h3>
+          <p id="video-modal-meta">Theni, Tamil Nadu · 4K Master</p>
+          <div class="video-actions">
+            <a href="https://wa.me/919500515932?text=Hello%20Gopi%20Photography,%20can%20you%20share%20your%20full%20cinematic%20wedding%20video%20portfolio%20links?" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              Request Full 4K Film Links on WhatsApp →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEGAL INFORMATION MODAL -->
+  <div class="legal-modal" id="legal-modal" role="dialog" aria-modal="true" aria-label="Legal and Studio Policies" hidden>
+    <div class="legal-modal-backdrop" id="legal-modal-backdrop"></div>
+    <div class="legal-modal-panel">
+      <button class="legal-modal-close" id="legal-modal-close" aria-label="Close legal policy window">✕</button>
+      <div class="legal-modal-body" id="legal-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP CHAT WIDGET -->
+  <aside class="wa-chat-widget" id="wa-chat-widget" aria-label="Direct WhatsApp Enquiry Widget">
+    <div class="wa-chat-popup" id="wa-chat-popup" hidden>
+      <div class="wa-chat-header">
+        <div class="wa-avatar-wrap">
+          <img src="assets/logo.png" alt="Gopi Photography Avatar" width="40" height="40">
+          <span class="wa-online-dot" aria-label="Online"></span>
+        </div>
+        <div class="wa-header-text">
+          <strong>GOPI PHOTOGRAPHY</strong>
+          <small>Typically replies in under 2 hours</small>
+        </div>
+        <button class="wa-close-btn" id="wa-close-btn" aria-label="Close chat popup">✕</button>
+      </div>
+
+      <div class="wa-chat-body">
+        <div class="wa-msg-bubble">
+          <p>Vanakkam! 🙏 How can we help preserve your wedding or family celebration?</p>
+          <span class="wa-msg-time">Just now</span>
+        </div>
+
+        <div class="wa-quick-prompts">
+          <button class="wa-prompt-chip" data-msg="Hi Gopi Photography, I would like to check date availability for our upcoming celebration.">
+            📅 Check Date Availability
+          </button>
+          <button class="wa-prompt-chip" data-msg="Hi Gopi Photography, please send details and pricing for your wedding photography packages.">
+            📦 Package Pricing &amp; Details
+          </button>
+          <button class="wa-prompt-chip" data-msg="Hi Gopi Photography, can you share your latest 4K cinematic wedding highlight films?">
+            🎥 View 4K Wedding Films
+          </button>
+        </div>
+      </div>
+
+      <form class="wa-chat-footer" id="wa-chat-footer">
+        <div class="security-hp" style="position: absolute; left: -9999px; top: -9999px; opacity: 0; pointer-events: none; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+          <input type="text" name="_sec_wa" tabindex="-1" autocomplete="off">
+        </div>
+        <input type="text" id="wa-custom-input" placeholder="Type a message..." aria-label="Type message for WhatsApp" autocomplete="off">
+        <button type="submit" class="wa-send-btn" aria-label="Send on WhatsApp">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <button class="wa-toggle-btn" id="wa-toggle-btn" aria-label="Open WhatsApp Chat">
+      <span class="wa-unread-badge" id="wa-unread-badge">1</span>
+      <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+        <path d="M20.52 3.48A11.93 11.93 0 0012.06 0C5.46 0 .09 5.37.09 11.97c0 2.11.55 4.17 1.6 6L0 24l6.21-1.63a11.93 11.93 0 005.85 1.51h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-.12-6.22-3.52-8.43zM12.06 21.9a9.92 9.92 0 01-5.06-1.39l-.36-.21-3.76.99 1-3.66-.23-.38a9.9 9.9 0 01-1.52-5.28c0-5.48 4.46-9.94 9.94-9.94 2.65 0 5.14 1.03 7.02 2.91a9.88 9.88 0 012.91 7.03c0 5.48-4.46 9.93-9.94 9.93z"/>
+      </svg>
+    </button>
+  </aside>
+
+  <!-- Master JavaScript Engine -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>

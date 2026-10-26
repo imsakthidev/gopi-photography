@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- 1. Master Homepage -->
   <url>
     <loc>https://gopiphotography.vercel.app/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     
@@ -41,7 +42,15 @@
       <image:caption>Timeless bridal studio portrait demonstrating unedited natural skin tones versus artificial filter comparison</image:caption>
       <image:geo_location>Theni, Tamil Nadu, India</image:geo_location>
     </image:image>
+  </url>
 
+  <!-- 2. Portfolio, Stories & 4K Films Landing Page -->
+  <url>
+    <loc>https://gopiphotography.vercel.app/portfolio.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    
     <image:image>
       <image:loc>https://gopiphotography.vercel.app/assets/couple-2.webp</image:loc>
       <image:title>Pre-Wedding Outdoor Photoshoot Coimbatore</image:title>
@@ -92,10 +101,27 @@
     </image:image>
   </url>
 
+  <!-- 3. Investment & Packages Landing Page -->
   <url>
-    <loc>https://gopiphotography.com/</loc>
-    <lastmod>2026-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://gopiphotography.vercel.app/packages.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- 4. About Studio & Skin Tone Philosophy Landing Page -->
+  <url>
+    <loc>https://gopiphotography.vercel.app/about.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 5. Contact & Date Availability Landing Page -->
+  <url>
+    <loc>https://gopiphotography.vercel.app/contact.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
